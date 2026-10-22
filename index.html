@@ -3,57 +3,209 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Блог rukazax</title>
-<meta name="description" content="Заметки о собственных продуктах, инструментах и открытом коде.">
-<meta property="og:title" content="Блог rukazax">
-<meta property="og:description" content="Заметки о собственных продуктах, инструментах и открытом коде.">
+<title>Разработка программного обеспечения — rukazax</title>
+<meta name="description" content="Разработка сайтов, мобильных приложений, браузерных расширений, VPN-инфраструктуры и AI-решений. Константин Александрович Ерёмин, Москва.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Разработка программного обеспечения — rukazax">
+<meta property="og:description" content="Сайты, мобильные приложения, расширения, VPN и AI-решения под ключ.">
 <meta property="og:image" content="https://rukazax.github.io/assets/covers/private-speeddial.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
+<meta property="og:url" content="https://rukazax.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="hero">
-    <h1>Блог rukazax</h1>
-    <p>Заметки о собственных продуктах, инструментах и открытом коде.</p>
-  </header>
-  <div class="grid">
-    <a class="card" href="posts/private-speeddial.html">
-      <img src="assets/covers/private-speeddial.png" alt="Private SpeedDial: закладки, которые принадлежат вам" loading="lazy">
-      <div class="body">
-        <p class="meta">2026-10-22</p>
-        <h2>Private SpeedDial: закладки, которые принадлежат вам</h2>
-        <p>Панель быстрого доступа с заметками, папками и синхронизацией в вашем облаке — расширение Chrome и приложение Android.</p>
-      </div>
-    </a>
-    <a class="card" href="posts/xio-vpn.html">
-      <img src="assets/covers/xio-vpn.png" alt="XIO: VPN, который живёт на вашем сервере" loading="lazy">
-      <div class="body">
-        <p class="meta">2026-10-22</p>
-        <h2>XIO: VPN, который живёт на вашем сервере</h2>
-        <p>Свой VPS, свои пользователи, пять протоколов и один интерфейс на Android, Ubuntu и Windows.</p>
-      </div>
-    </a>
-    <a class="card" href="posts/x1o-harness.html">
-      <img src="assets/covers/x1o-harness.png" alt="x1o: один харнесс для всех моделей" loading="lazy">
-      <div class="body">
-        <p class="meta">2026-10-22</p>
-        <h2>x1o: один харнесс для всех моделей</h2>
-        <p>Самохостная платформа личных ИИ-ассистентов: единый API, очередь диалогов, биллинг и облачная плоскость для тенантов.</p>
-      </div>
-    </a>
-    <a class="card" href="posts/ru-deepseek-harness.html">
-      <img src="assets/covers/deepseek-harness.png" alt="Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил" loading="lazy">
-      <div class="body">
-        <p class="meta">2026-10-22</p>
-        <h2>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</h2>
-        <p>Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен внутри и как включить русский интерфейс за пять минут.</p>
-      </div>
-    </a>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="/"><span class="dot"></span> RUKAZAX</a>
+    <div class="top-meta">
+      <span>Пн–Пт, 10:00–19:00 МСК</span>
+      <a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a>
+      <a href="tel:+79998024040">+7 (999) 802-40-40</a>
+      <a class="btn btn-accent" href="mailto:rukazax@gmail.com?subject=Заявка на разработку">Оставить заявку</a>
+    </div>
   </div>
-  <p class="subscribe">Продукты: <a href="https://github.com/rukazax/Private_SpeedDial">Private SpeedDial</a>,
-  <a href="https://github.com/rukazax/xio_vpn">XIO</a>, <a href="https://x1o.org">x1o</a>.</p>
-  <footer><p>© 2026 rukazax · статика на GitHub Pages</p></footer>
 </div>
+
+<div class="wrap">
+  <nav class="navrow">
+    <a href="#services">Услуги</a><a href="#cases">Продукты</a><a href="#process">Как работаю</a>
+    <a href="#stack">Технологии</a><a href="#blog">Блог</a><a href="#contact">Контакты</a>
+  </nav>
+
+  <section class="hero" id="top">
+    <div class="eyebrow">Разработка программного обеспечения</div>
+    <h1 class="display">Создаю цифровые<br>продукты <span class="accent">под ключ</span></h1>
+    <p class="lead">Сайты, мобильные приложения, браузерные расширения, VPN-инфраструктура и AI-платформы.
+    От идеи и прототипа до релиза, документации и поддержки.</p>
+    <div class="hero-actions">
+      <a class="btn btn-accent" href="mailto:rukazax@gmail.com?subject=Обсудить проект">Обсудить проект</a>
+      <a class="btn btn-ghost" href="#cases">Посмотреть продукты</a>
+    </div>
+
+    <div class="cards-4">
+      <a class="svc-card" href="#services">
+        <div><h3>Сайты и веб-сервисы</h3><p>Веб-платформы, лендинги и внутренние сервисы, которые растут вместе с бизнесом.</p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="svc-card" href="#services">
+        <div><h3>Мобильные приложения</h3><p>Android и кроссплатформенные приложения: от MVP до продукта с синхронизацией.</p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="svc-card" href="#services">
+        <div><h3>AI-решения</h3><p>Подключение моделей, единый API, учёт расходов и self-hosted платформы.</p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="svc-card" href="#contact">
+        <div><h3>Команда под проект</h3><p>Усиление вашей команды: фронтенд, бэкенд, мобильная разработка.</p></div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>3</b><span>продукта в разработке и в проде</span></div>
+      <div class="stat"><b>5</b><span>платформ: браузер, Android, Windows, Ubuntu, iOS</span></div>
+      <div class="stat"><b>13</b><span>языков интерфейса в продуктах</span></div>
+      <div class="stat"><b>1400+</b><span>автотестов в платформе x1o</span></div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="sec-head">
+      <div><h2>Продукты, а не презентации</h2>
+      <p>Каждый проект доведён до состояния, которым пользуются: магазин расширений, релизы APK,
+      публичный сайт и открытый код.</p></div>
+      <a class="sec-link" href="#blog">Все статьи →</a>
+    </div>
+    <div class="cases">
+      <a class="case" href="posts/private-speeddial.html">
+        <img src="assets/covers/private-speeddial.png" alt="Private SpeedDial: закладки, которые принадлежат вам" loading="lazy">
+        <div class="in">
+          <div class="tag">chrome</div>
+          <h3>Private SpeedDial: закладки, которые принадлежат вам</h3>
+          <p>Панель быстрого доступа с заметками, папками и синхронизацией в вашем облаке — расширение Chrome и приложение Android.</p>
+        </div>
+      </a>
+      <a class="case" href="posts/xio-vpn.html">
+        <img src="assets/covers/xio-vpn.png" alt="XIO: VPN, который живёт на вашем сервере" loading="lazy">
+        <div class="in">
+          <div class="tag">vpn</div>
+          <h3>XIO: VPN, который живёт на вашем сервере</h3>
+          <p>Свой VPS, свои пользователи, пять протоколов и один интерфейс на Android, Ubuntu и Windows.</p>
+        </div>
+      </a>
+      <a class="case" href="posts/x1o-harness.html">
+        <img src="assets/covers/x1o-harness.png" alt="x1o: один харнесс для всех моделей" loading="lazy">
+        <div class="in">
+          <div class="tag">llm</div>
+          <h3>x1o: один харнесс для всех моделей</h3>
+          <p>Самохостная платформа личных ИИ-ассистентов: единый API, очередь диалогов, биллинг и облачная плоскость для тенантов.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="sec-head">
+      <div><h2>Услуги</h2>
+      <p>Берусь за задачи, где нужен полный цикл: от архитектуры и интерфейса до сборки, релиза и поддержки.</p></div>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row">
+        <div class="n">01</div>
+        <div><h3>Сайты и веб-сервисы</h3><p>Лендинги, корпоративные сайты и внутренние сервисы: React и TypeScript на фронте, Python или Node на бэкенде, аккуратные API и интеграции.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">02</div>
+        <div><h3>Браузерные расширения</h3><p>Chrome Manifest V3: панели быстрого доступа, синхронизация, импорт и экспорт данных, приватность по умолчанию и публикация в Web Store.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">03</div>
+        <div><h3>Мобильные приложения</h3><p>Нативный Android на Java и Kotlin, кроссплатформенные приложения на Dart и Flutter, гибридные решения на WebView с нативным мостом.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">04</div>
+        <div><h3>Десктоп и системная интеграция</h3><p>Windows-приложения на Avalonia и .NET, оболочки на Tauri, пакеты для Ubuntu, работа с системными драйверами и сервисами.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">05</div>
+        <div><h3>VPN и сетевая инфраструктура</h3><p>Свой сервер на VPS: установка по SSH, протоколы Xray и WireGuard, обфускация, управление пользователями и экспорт конфигураций.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">06</div>
+        <div><h3>AI-решения и LLM-интеграции</h3><p>Подключение моделей через единый API, очередь диалогов, учёт расходов, пуш-уведомления и self-hosted платформа под вашим контролем.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="sec-head">
+      <div><h2>Как идёт работа</h2>
+      <p>Короткие итерации и рабочие сборки вместо отчётов. Вы видите прогресс каждую неделю.</p></div>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Бриф</h3><p>Разбираем задачу, ограничения и критерии готовности. Фиксируем объём первой версии.</p></div>
+      <div class="step"><b>02</b><h3>Прототип</h3><p>Собираем каркас: экраны, схему данных, API. Проверяем идею до большой разработки.</p></div>
+      <div class="step"><b>03</b><h3>Разработка</h3><p>Итерации с рабочими сборками. Код, тесты, ревью и понятная документация.</p></div>
+      <div class="step"><b>04</b><h3>Поддержка</h3><p>Релизы, обновления, мониторинг. Отвечаю на вопросы и чиню, если что-то сломалось.</p></div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="sec-head">
+      <div><h2>Технологии</h2>
+      <p>Выбираю инструменты под задачу, а не под моду. Всё, что ниже, используется в реальных продуктах.</p></div>
+    </div>
+    <div class="chips"><span>TypeScript</span><span>React</span><span>Python</span><span>FastAPI</span><span>Dart</span><span>Flutter</span><span>Java</span><span>Kotlin</span><span>C#</span><span>Avalonia</span><span>Go</span><span>Rust</span><span>PostgreSQL</span><span>SQLite</span><span>Redis</span><span>Docker</span><span>Linux</span><span>Nginx</span><span>GitHub Actions</span><span>Tauri</span></div>
+  </section>
+
+  <section id="blog">
+    <div class="sec-head">
+      <div><h2>Блог</h2>
+      <p>Разборы собственных продуктов: как устроены, какие решения приняты и что не получилось.</p></div>
+    </div>
+    <div class="bloglist">
+      <a class="blogrow" href="posts/private-speeddial.html">
+        <div><div class="t">Private SpeedDial: закладки, которые принадлежат вам</div><div class="d">2026-10-22 · chrome, android</div></div>
+        <div class="go">→</div>
+      </a>
+      <a class="blogrow" href="posts/xio-vpn.html">
+        <div><div class="t">XIO: VPN, который живёт на вашем сервере</div><div class="d">2026-10-22 · vpn, android</div></div>
+        <div class="go">→</div>
+      </a>
+      <a class="blogrow" href="posts/x1o-harness.html">
+        <div><div class="t">x1o: один харнесс для всех моделей</div><div class="d">2026-10-22 · llm, self-hosted</div></div>
+        <div class="go">→</div>
+      </a>
+      <a class="blogrow" href="posts/ru-deepseek-harness.html">
+        <div><div class="t">Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</div><div class="d">2026-10-22 · deepseek, i18n</div></div>
+        <div class="go">→</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Обсудим ваш проект</h2>
+      <p>Расскажите задачу в двух предложениях — отвечу в рабочее время, предложу план и оценку.
+      Первая консультация бесплатная.</p>
+      <a class="btn btn-accent" href="mailto:rukazax@gmail.com?subject=Обсудить проект">Написать на почту</a>
+      <div class="contact-grid">
+        <div><div class="k">Контактное лицо</div><div class="v">Константин Александрович Ерёмин</div></div>
+        <div><div class="k">Телефон</div><a class="v" href="tel:+79998024040">+7 (999) 802-40-40</a></div>
+        <div><div class="k">Почта</div><a class="v" href="mailto:rukazax@gmail.com">rukazax@gmail.com</a></div>
+        <div><div class="k">Адрес</div><div class="v">г. Москва, ул. Сосновая, дом 1к2</div></div>
+        <div><div class="k">Часы работы</div><div class="v">Пн–Пт, 10:00–19:00 МСК</div></div>
+        <div><div class="k">GitHub</div><a class="v" href="https://github.com/rukazax">github.com/rukazax</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <span>© 2026 Константин Александрович Ерёмин · г. Москва, ул. Сосновая, дом 1к2</span>
+    <span><a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> · <a href="tel:+79998024040">+7 (999) 802-40-40</a></span>
+  </footer>
+</div>
+
 </body>
 </html>
