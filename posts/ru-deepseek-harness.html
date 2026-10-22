@@ -142,11 +142,7 @@ runtime.setLocale(&#x27;ru&#x27;)</code></pre>
 <p>Русификация DSH — хороший пример того, как экосистема закрывает пробел быстрее вендора. Никакого взлома и патчинга бинарников: плагин пользуется теми же API, что и штатные языки, а весь перевод лежит в открытых JSON-словарях. Если вы работаете в DSH каждый день, русский интерфейс перестаёт быть косметикой — на нём просто меньше спотыкаешься.</p>
 <p>Спасибо авторам <a href="https://github.com/GooDAnDReaDY/dsh-russian-lang">dsh-russian-lang</a> за словари и клиентский бандл — эта статья лишь рассказ о том, как они устроены и как их включить.</p>
 </div>
-<script type="module">
-  try {
-    const { default: mermaid } = await import("https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs");
-    mermaid.initialize({ startOnLoad: true, theme: "dark" });
-  } catch (e) { /* offline: leave the diagram source visible */ }
-</script>
+<script src="../assets/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, theme: "dark" });</script>
 </body>
 </html>
