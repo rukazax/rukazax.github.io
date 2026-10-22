@@ -16,7 +16,12 @@
 </head>
 <body>
 <div class="page">
-  <nav class="top"><a href="../index.html">← На главную</a><a href="../index.html#blog">Все статьи</a></nav>
+  <nav class="top">
+    <a href="../index.html">← На главную</a>
+    <span style="display:flex;gap:12px;align-items:center">
+      <a href="../index.html#blog">Все статьи</a><button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+    </span>
+  </nav>
   <article>
     <img class="cover" src="../assets/covers/deepseek-harness.png" alt="Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил">
     <h1>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</h1>
@@ -118,6 +123,7 @@ runtime.setLocale(&#x27;ru&#x27;)</code></pre>
     <a href="tel:+79998024040">+7 (999) 802-40-40</a></p>
   </footer>
 </div>
+<script src="../assets/app.js"></script>
 <script src="../assets/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true, theme: "dark" });</script>
 </body>
