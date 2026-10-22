@@ -111,6 +111,7 @@ section { padding:74px 0 0; }
 .case:hover { border-color:var(--accent-ink); transform:translateY(-3px); }
 .case img { border:0; border-radius:0; margin:0; border-bottom:1px solid var(--edge); }
 .case .in { padding:22px 24px 26px; }
+.cases.compact { grid-template-columns:repeat(auto-fit, minmax(240px, 320px)); justify-content:start; }
 .case .tag { color:var(--accent-ink); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
 .case h3 { margin:8px 0 8px; font-size:21px; line-height:1.25; }
 .case p { margin:0; color:var(--muted); font-size:15px; }
