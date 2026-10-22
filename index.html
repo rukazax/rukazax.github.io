@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Блог rukazax</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin:0; background:#0b1220; color:#e2e8f0; font:17px/1.65 "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 820px; margin: 0 auto; padding: 72px 28px 120px; }
+header h1 { font-size: 38px; margin:0 0 8px; letter-spacing:-.02em; }
+header p { color:#94a3b8; margin:0 0 48px; }
+a { color:#67e8f9; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.card { display:block; border:1px solid #1e293b; background:#0f172a; border-radius:16px;
+  padding:26px 28px; margin-bottom:20px; transition:border-color .15s ease, transform .15s ease; }
+.card:hover { border-color:#22d3ee; transform: translateY(-2px); text-decoration:none; }
+.card h2 { margin:0 0 10px; font-size:24px; color:#f8fafc; }
+.card .meta { color:#64748b; font-size:14px; letter-spacing:.04em; text-transform:uppercase; margin-bottom:10px; }
+.card p { margin:0; color:#94a3b8; font-size:16px; }
+.tags span { display:inline-block; font-size:12px; color:#a5b4fc; border:1px solid #312e81;
+  background:#1e1b4b; border-radius:999px; padding:3px 10px; margin:14px 8px 0 0; }
+footer { margin-top:56px; color:#475569; font-size:14px; }
+footer a { color:#64748b; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Блог rukazax</h1>
+    <p>Заметки о инструментах, автоматизации и открытом коде.</p>
+  </header>
+
+  <a class="card" href="posts/ru-deepseek-harness.html">
+    <div class="meta">22 октября 2026 · локализация</div>
+    <h2>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</h2>
+    <p>Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен
+    внутри и как включить русский интерфейс за пять минут.</p>
+    <div class="tags"><span>deepseek</span><span>dsh</span><span>i18n</span><span>open-source</span></div>
+  </a>
+
+  <footer>
+    <a href="https://github.com/rukazax">github.com/rukazax</a> · сайт собран статикой и живёт на GitHub Pages
+  </footer>
+</div>
+</body>
+</html>
