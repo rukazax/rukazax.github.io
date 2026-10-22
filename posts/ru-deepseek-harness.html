@@ -3,55 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил — блог rukazax</title>
+<meta name="description" content="Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен внутри и как включить русский интерфейс за пять минут.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил — блог rukazax">
+<meta property="og:description" content="Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен внутри и как включить русский интерфейс за пять минут.">
+<meta property="og:image" content="https://rukazax.github.io/assets/covers/deepseek-harness.png">
+<meta property="og:url" content="https://rukazax.github.io/posts/ru-deepseek-harness.html">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
-<title>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</title>
-<style>
-:root { color-scheme: dark; }
-* { box-sizing: border-box; }
-body { margin:0; background:#0b1220; color:#e2e8f0;
-  font: 17px/1.65 "Segoe UI", Roboto, sans-serif; }
-.wrap { max-width: 860px; margin: 0 auto; padding: 64px 28px 120px; }
-.banner { border:1px solid #1e293b; background:#0f172a; border-radius:12px;
-  padding:12px 16px; color:#94a3b8; font-size:14px; margin-bottom:40px; }
-.banner b { color:#22d3ee; }
-h1 { font-size: 40px; line-height:1.2; margin:0 0 18px; letter-spacing:-.02em; }
-h2 { font-size: 27px; margin:56px 0 16px; color:#f8fafc; }
-h3 { font-size: 21px; margin:32px 0 10px; }
-p { margin: 0 0 18px; }
-a { color:#67e8f9; text-decoration:none; border-bottom:1px solid rgba(103,232,249,.35); }
-a:hover { border-color:#67e8f9; }
-strong { color:#f8fafc; }
-code { background:#1e293b; padding:2px 6px; border-radius:5px; font-size:.9em;
-  font-family: Consolas, "Cascadia Mono", monospace; color:#a5f3fc; }
-pre.code { background:#0f172a; border:1px solid #1e293b; border-radius:12px;
-  padding:18px 20px; overflow:auto; position:relative; }
-pre.code code { background:none; padding:0; color:#cbd5e1; font-size:14px; }
-pre.code::before { content: attr(data-lang); position:absolute; top:8px; right:12px;
-  font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#475569; }
-blockquote { margin:24px 0; padding:14px 18px; border-left:3px solid #22d3ee;
-  background:#0f172a; border-radius:0 10px 10px 0; color:#cbd5e1; }
-blockquote p { margin:0; }
-ul { padding-left: 22px; margin: 0 0 20px; }
-li { margin-bottom: 8px; }
-hr { border:0; border-top:1px solid #1e293b; margin:44px 0; }
-img { max-width:100%; border-radius:14px; border:1px solid #1e293b; margin:24px 0; display:block; }
-.table-wrap { overflow-x:auto; margin:24px 0; }
-table { border-collapse: collapse; width:100%; font-size:15px; }
-th, td { text-align:left; padding:10px 14px; border-bottom:1px solid #1e293b; vertical-align:top; }
-th { color:#94a3b8; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.04em; }
-tbody tr:hover { background:#0f172a; }
-kbd { background:#1e293b; border:1px solid #334155; border-bottom-width:2px;
-  border-radius:5px; padding:1px 6px; font: 13px Consolas, monospace; color:#e2e8f0; }
-.diagram { margin:28px 0; border:1px dashed #334155; border-radius:12px; padding:16px; background:#0f172a; }
-.diagram-cap { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#64748b; margin-bottom:10px; }
-.diagram pre { margin:0; white-space:pre-wrap; color:#94a3b8; font-size:13px; }
-.meta { color:#94a3b8; font-size:18px; margin:0 0 32px; }
-</style>
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
 <div class="wrap">
-  <p class="meta">Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен внутри и как включить русский интерфейс за пять минут.</p>
-  <h1>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</h1>
+  <nav class="top"><a href="../index.html">← Все статьи</a><a href="https://github.com/rukazax">github.com/rukazax</a></nav>
+  <article>
+    <img class="cover" src="../assets/covers/deepseek-harness.png" alt="Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил">
+    <h1>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</h1>
+    <p class="meta">2026-10-22 · deepseek, i18n, open-source</p>
+    <p class="lead">Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен внутри и как включить русский интерфейс за пять минут.</p>
 <p><strong>TL;DR.</strong> DeepSeek Harness (DSH) — англоязычный агентский харнесс. Русский интерфейс для него делает не команда DeepSeek, а сообщество: плагин <code>@goodandready/dsh-russian-lang</code>. Внутри — около 22 тысяч переведённых строк, собственный клиентский бандл и штатное API локализации DSH. Установка занимает несколько минут, перезапуск приложения не нужен, а откат делается удалением одной папки.</p>
 <hr>
 <h2>Что такое DSH и почему он на английском</h2>
@@ -88,7 +58,7 @@ runtime.addLanguage({ id: &#x27;ru&#x27;, label: &#x27;Русский&#x27;, fal
 runtime.register(&#x27;settings&#x27;, &#x27;ru&#x27;, { /* словарь пространства имён */ })
 runtime.setLocale(&#x27;ru&#x27;)</code></pre>
 <p>Дальше <code>t('settings.language')</code> в любом плагине возвращает русскую строку — без перезагрузки страницы, потому что DSH перерисовывает подписи по событию смены локали.</p>
-<div class="diagram"><div class="diagram-cap">схема (mermaid)</div><pre class="mermaid">flowchart LR
+<div class="diagram"><div class="diagram-cap">схема</div><pre class="mermaid">flowchart LR
     A[&quot;GitHub: dsh-russian-lang&quot;] --&gt; B[&quot;npm-пакет 0.4.1&quot;]
     B --&gt; C[&quot;profiles/desktop/node_modules&quot;]
     C --&gt; D[&quot;Загрузчик DSH&lt;br/&gt;entry dsh-russian-lang&quot;]
@@ -141,6 +111,11 @@ runtime.setLocale(&#x27;ru&#x27;)</code></pre>
 <h2>Вывод</h2>
 <p>Русификация DSH — хороший пример того, как экосистема закрывает пробел быстрее вендора. Никакого взлома и патчинга бинарников: плагин пользуется теми же API, что и штатные языки, а весь перевод лежит в открытых JSON-словарях. Если вы работаете в DSH каждый день, русский интерфейс перестаёт быть косметикой — на нём просто меньше спотыкаешься.</p>
 <p>Спасибо авторам <a href="https://github.com/GooDAnDReaDY/dsh-russian-lang">dsh-russian-lang</a> за словари и клиентский бандл — эта статья лишь рассказ о том, как они устроены и как их включить.</p>
+    <div class="tags"><span>deepseek</span><span>i18n</span><span>open-source</span></div>
+  </article>
+  <footer>
+    <p>Блог rukazax · <a href="https://rukazax.github.io/posts/ru-deepseek-harness.html">rukazax.github.io/posts/ru-deepseek-harness.html</a></p>
+  </footer>
 </div>
 <script src="../assets/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true, theme: "dark" });</script>
