@@ -33,11 +33,6 @@
   });
 
   /* ---------- burger on scroll ---------- */
-  function onScroll() {
-    document.body.classList.toggle('scrolled', window.scrollY > 120);
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
   var burger = document.getElementById('burgerBtn');
   if (burger) {
