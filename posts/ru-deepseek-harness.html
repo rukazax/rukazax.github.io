@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
+<title>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</title>
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin:0; background:#0b1220; color:#e2e8f0;
+  font: 17px/1.65 "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 64px 28px 120px; }
+.banner { border:1px solid #1e293b; background:#0f172a; border-radius:12px;
+  padding:12px 16px; color:#94a3b8; font-size:14px; margin-bottom:40px; }
+.banner b { color:#22d3ee; }
+h1 { font-size: 40px; line-height:1.2; margin:0 0 18px; letter-spacing:-.02em; }
+h2 { font-size: 27px; margin:56px 0 16px; color:#f8fafc; }
+h3 { font-size: 21px; margin:32px 0 10px; }
+p { margin: 0 0 18px; }
+a { color:#67e8f9; text-decoration:none; border-bottom:1px solid rgba(103,232,249,.35); }
+a:hover { border-color:#67e8f9; }
+strong { color:#f8fafc; }
+code { background:#1e293b; padding:2px 6px; border-radius:5px; font-size:.9em;
+  font-family: Consolas, "Cascadia Mono", monospace; color:#a5f3fc; }
+pre.code { background:#0f172a; border:1px solid #1e293b; border-radius:12px;
+  padding:18px 20px; overflow:auto; position:relative; }
+pre.code code { background:none; padding:0; color:#cbd5e1; font-size:14px; }
+pre.code::before { content: attr(data-lang); position:absolute; top:8px; right:12px;
+  font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#475569; }
+blockquote { margin:24px 0; padding:14px 18px; border-left:3px solid #22d3ee;
+  background:#0f172a; border-radius:0 10px 10px 0; color:#cbd5e1; }
+blockquote p { margin:0; }
+ul { padding-left: 22px; margin: 0 0 20px; }
+li { margin-bottom: 8px; }
+hr { border:0; border-top:1px solid #1e293b; margin:44px 0; }
+img { max-width:100%; border-radius:14px; border:1px solid #1e293b; margin:24px 0; display:block; }
+.table-wrap { overflow-x:auto; margin:24px 0; }
+table { border-collapse: collapse; width:100%; font-size:15px; }
+th, td { text-align:left; padding:10px 14px; border-bottom:1px solid #1e293b; vertical-align:top; }
+th { color:#94a3b8; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.04em; }
+tbody tr:hover { background:#0f172a; }
+kbd { background:#1e293b; border:1px solid #334155; border-bottom-width:2px;
+  border-radius:5px; padding:1px 6px; font: 13px Consolas, monospace; color:#e2e8f0; }
+.diagram { margin:28px 0; border:1px dashed #334155; border-radius:12px; padding:16px; background:#0f172a; }
+.diagram-cap { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#64748b; margin-bottom:10px; }
+.diagram pre { margin:0; white-space:pre-wrap; color:#94a3b8; font-size:13px; }
+.meta { color:#94a3b8; font-size:18px; margin:0 0 32px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="meta">Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен внутри и как включить русский интерфейс за пять минут.</p>
+  <h1>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</h1>
+<p><strong>TL;DR.</strong> DeepSeek Harness (DSH) — англоязычный агентский харнесс. Русский интерфейс для него делает не команда DeepSeek, а сообщество: плагин <code>@goodandready/dsh-russian-lang</code>. Внутри — около 22 тысяч переведённых строк, собственный клиентский бандл и штатное API локализации DSH. Установка занимает несколько минут, перезапуск приложения не нужен, а откат делается удалением одной папки.</p>
+<hr>
+<h2>Что такое DSH и почему он на английском</h2>
+<p>DeepSeek Harness — это рабочее место для ИИ-агента: чат, дерево файлов, терминал, планировщик задач, субагенты, трассировка вызовов инструментов. Всё это живёт в веб-интерфейсе, который десктопное приложение открывает в окне Electron, а тот же сервер можно открыть и в обычном браузере.</p>
+<p>Ядро DSH изначально поддерживает два языка — английский и китайский. Переводить интерфейс на другие языки можно, но только «руками»: каждая подпись в интерфейсе — это ключ в словаре, и переводить нужно именно ключи, а не текст на экране.</p>
+<h2>Где нашёлся перевод</h2>
+<p>На GitHub нашлось сразу несколько независимых попыток русификации:</p>
+<div class="table-wrap"><table><thead><tr><th>Репозиторий</th><th>Что внутри</th></tr></thead><tbody><tr><td><a href="https://github.com/GooDAnDReaDY/dsh-russian-lang">GooDAnDReaDY/dsh-russian-lang</a></td><td>Полная локализация ядра и ~85 плагинов экосистемы, npm-пакет, типографика, инспектор перевода</td></tr><tr><td><a href="https://github.com/AbsoluteMikhail/dsh-locale-ru">AbsoluteMikhail/dsh-locale-ru</a></td><td>Полная русификация веб-интерфейса</td></tr><tr><td><a href="https://github.com/nemezida1337/dsh-locale-russian">nemezida1337/dsh-locale-russian</a></td><td>Языковой пакет и пайплайн перевода</td></tr><tr><td><a href="https://github.com/Balla1ore/dsh-locale-ru">Balla1ore/dsh-locale-ru</a></td><td>Строки веб-интерфейса и оболочки</td></tr></tbody></table></div>
+<p>Я взял первый: он заявлен под DSH <code>0.2.1-rc.2</code> — ровно та версия, что стояла у меня, — и распространяется как обычный npm-пакет <code>@goodandready/dsh-russian-lang@0.4.1</code>.</p>
+<blockquote>Важно: это плагин, а не форк приложения. Он не патчит <code>.exe</code>, не ломает обновления и не требует правки файлов установки. Всё живёт в профиле пользователя.</blockquote>
+<p><img alt="Схема: путь перевода от GitHub до русского интерфейса" src="../assets/flow.png"></p>
+<h2>Как это устроено внутри</h2>
+<p>DSH — приложение на <a href="https://github.com/deepseek-ai/cordis">Cordis</a>: всё, включая интерфейс, собирается из плагинов. У плагина есть две половины:</p>
+<ul>
+<li><strong>хостовая</strong> (<code>lib/index.js</code>) — выполняется в Node.js, здесь же объявляется схема настроек;</li>
+<li><strong>клиентская</strong> (<code>lib/client.js</code>) — обычный JS-файл, который браузер загружает как модуль <code>@goodandready/dsh-russian-lang</code>.</li>
+</ul>
+<p>Пакет объявляет в <code>package.json</code> два важных поля:</p>
+<pre class="code" data-lang="json"><code>{
+  &quot;dsh&quot;: {
+    &quot;bundle&quot;: { &quot;patch&quot;: &quot;./cordis.patch.yml&quot; },
+    &quot;client&quot;: {
+      &quot;platform&quot;: &quot;web&quot;,
+      &quot;inject&quot;: [&quot;@deepseek-ai/dsh-client-locale&quot;,
+                 &quot;@deepseek-ai/dsh-client-ui-settings&quot;,
+                 &quot;@deepseek-ai/dsh-client-ui-slots&quot;]
+    }
+  }
+}</code></pre>
+<p><code>bundle.patch</code> — это фрагмент конфигурации, который добавляет запись плагина в дерево загрузчика. <code>client</code> — описание браузерной половины: какой модуль грузить и от каких плагинов она зависит.</p>
+<p>А сам перевод регистрируется через штатное API локализации DSH (<code>@deepseek-ai/dsh-client-locale</code>):</p>
+<pre class="code" data-lang="js"><code>// упрощённо, по мотивам lib/client.js
+runtime.addLanguage({ id: &#x27;ru&#x27;, label: &#x27;Русский&#x27;, fallback: &#x27;en&#x27; })
+runtime.register(&#x27;settings&#x27;, &#x27;ru&#x27;, { /* словарь пространства имён */ })
+runtime.setLocale(&#x27;ru&#x27;)</code></pre>
+<p>Дальше <code>t('settings.language')</code> в любом плагине возвращает русскую строку — без перезагрузки страницы, потому что DSH перерисовывает подписи по событию смены локали.</p>
+<div class="diagram"><div class="diagram-cap">схема (mermaid)</div><pre class="mermaid">flowchart LR
+    A[&quot;GitHub: dsh-russian-lang&quot;] --&gt; B[&quot;npm-пакет 0.4.1&quot;]
+    B --&gt; C[&quot;profiles/desktop/node_modules&quot;]
+    C --&gt; D[&quot;Загрузчик DSH&lt;br/&gt;entry dsh-russian-lang&quot;]
+    D --&gt; E[&quot;Клиентский модуль&lt;br/&gt;client.js&quot;]
+    E --&gt; F[&quot;locale.addLanguage + register&quot;]
+    F --&gt; G[&quot;Русский интерфейс&quot;]
+    G -.-&gt;|&quot;HMR, без перезапуска&quot;| D</pre></div>
+<p>Отдельно стоит заметить, как DSH доставляет клиентские модули: хост-половина сканирует включённые записи загрузчика, собирает «граф загрузки» и отдаёт бандлы по адресам вида <code>/plugins/??…&amp;rev=…</code>. Страница получает этот граф по SSE (<code>/plugins/events</code>) и подхватывает новые плагины на лету.</p>
+<h2>Журнал установки</h2>
+<p>Всё делалось на Windows, профиль <code>desktop</code>, DSH <code>0.2.1-rc.2</code>.</p>
+<p><strong>1. Пакет в профиль.</strong> Распаковал дистрибутив в <code>%USERPROFILE%\.dsh\profiles\desktop\node_modules\@goodandready\dsh-russian-lang</code>.</p>
+<p><strong>2. Манифест профиля.</strong> В <code>profiles\desktop\package.json</code> добавил зависимость и — главное — бандл:</p>
+<pre class="code" data-lang="json"><code>{
+  &quot;dependencies&quot;: { &quot;@goodandready/dsh-russian-lang&quot;: &quot;0.4.1&quot; },
+  &quot;dsh&quot;: { &quot;profile&quot;: { &quot;bundles&quot;: [
+    &quot;@deepseek-ai/dsh-base&quot;,
+    &quot;@deepseek-ai/dsh-web-app&quot;,
+    &quot;@goodandready/dsh-russian-lang&quot;
+  ] } }
+}</code></pre>
+<p><strong>3. Выбор языка.</strong> В <code>profiles\desktop\cordis.patch.yml</code> — предпочтение локали:</p>
+<pre class="code" data-lang="yaml"><code>- id: locale
+  name: &quot;@deepseek-ai/dsh-client-locale&quot;
+  config:
+    preference: ru</code></pre>
+<p><strong>4. Никакого перезапуска.</strong> У DSH включён HMR для конфигурации профиля: он перечитал слои патчей, поднял новую запись плагина, а открытая страница получила обновлённый граф модулей и загрузила <code>client.js</code> сама.</p>
+<h2>Как я проверял, что всё работает</h2>
+<p>Проверять «на глаз» скучно, поэтому смотрел на факты:</p>
+<div class="table-wrap"><table><thead><tr><th>Проверка</th><th>Результат</th></tr></thead><tbody><tr><td><code>GET /api/dsh-russian-lang/dict/core</code></td><td><code>200</code>, JSON со словарём ядра, ~159 КБ</td></tr><tr><td><code>GET /api/dsh-russian-lang/dict/all</code></td><td><code>200</code>, 65 пространств имён</td></tr><tr><td>Граф клиентских модулей (<code>/plugins/events</code>)</td><td>содержит запись <code>{"id":"@goodandready/dsh-russian-lang","url":"plugins/??@goodandready/dsh-russian-lang/client.js&amp;rev=…"}</code></td></tr><tr><td>Отдача бандла</td><td><code>200</code>, 168 540 байт, внутри <code>addLanguage</code>, <code>register(</code>, <code>ru-RU</code>, <code>spellcheck</code></td></tr></tbody></table></div>
+<p>То есть хостовая половина поднялась, клиентский модуль попал в граф и отдаётся браузеру — остаётся открыть <strong>Настройки → Общие → Язык</strong> и убедиться, что выбран «Русский».</p>
+<h2>Сколько там перевода</h2>
+<p>Плагин переводит не только ядро, но и десятки сторонних плагинов экосистемы — от канбан-досок до менеджера контекста.</p>
+<p><img alt="Объём перевода: ядро, плагины, объединённый словарь" src="../assets/coverage.png"></p>
+<div class="table-wrap"><table><thead><tr><th>Часть словаря</th><th>Пространств имён</th><th>Ключей</th></tr></thead><tbody><tr><td>Ядро DSH</td><td>65</td><td>2 760</td></tr><tr><td>Плагины экосистемы (97 файлов)</td><td>142</td><td>19 919</td></tr><tr><td><strong>Объединённый словарь</strong></td><td><strong>206</strong></td><td><strong>22 679</strong></td></tr></tbody></table></div>
+<p>Плюс мелочи, которые заметны в работе: правильные формы множественного числа («1 файл», «2 файла», «5 файлов»), ёлочки-кавычки и длинные тире, исправление текста, набранного в неверной раскладке (<kbd>Alt</kbd>+<kbd>L</kbd>), инспектор перевода по <kbd>Alt</kbd>+<kbd>Click</kbd> и словарь <code>&lt;html lang="ru-RU"&gt;</code> для проверки орфографии браузером.</p>
+<h2>Что не переводится и о чём стоит знать</h2>
+<ul>
+<li><strong>Системное меню Electron</strong> (File, Edit, Quit, Undo/Copy/Paste) принадлежит главному процессу приложения и веб-плагинами не переводится — это ограничение самого Electron, а не плагина.</li>
+<li><strong>Версионная совместимость.</strong> У пакета в <code>engines.dsh</code> указан диапазон; при обновлении DSH плагин может потребовать обновления. Перед апдейтом харнесса проверяйте, что версия плагина поддерживает новую версию DSH.</li>
+<li><strong>Перевод ответов модели — отдельная функция.</strong> По умолчанию движки перевода реплик выключены (<code>translateEngine: off</code>): интерфейс русский, а ответы модели — на языке запроса. Включать Google Translate стоит осознанно: текст уйдёт третьей стороне.</li>
+<li><strong>Агентский промпт</strong> («отвечай по-русски») тоже опционален — по умолчанию выключен.</li>
+</ul>
+<h2>Как повторить</h2>
+<p>Если у вас DSH с npm-доступом, всё сводится к одной команде:</p>
+<pre class="code" data-lang="bash"><code>dsh plugin --profile desktop add @goodandready/dsh-russian-lang</code></pre>
+<p>Дальше — <strong>Настройки → Общие → Язык → Русский</strong> и обновление страницы (<kbd>Ctrl</kbd>+<kbd>R</kbd>).</p>
+<p>Если npm недоступен или хочется зафиксировать версию, работает и «ручной» путь из этой статьи: распаковать пакет в <code>node_modules</code> профиля, добавить его в <code>dsh.profile.bundles</code> и выставить <code>preference: ru</code>.</p>
+<h2>Как откатить</h2>
+<p>Удалить папку плагина из <code>node_modules</code>, убрать его из <code>dependencies</code> и <code>dsh.profile.bundles</code>, удалить блок <code>id: locale</code> из <code>cordis.patch.yml</code>. Резервные копии манифеста и патча стоит сделать заранее — я сохранял <code>package.json.bak</code> и <code>cordis.patch.yml.bak</code> и ни разу об этом не пожалел.</p>
+<h2>Вывод</h2>
+<p>Русификация DSH — хороший пример того, как экосистема закрывает пробел быстрее вендора. Никакого взлома и патчинга бинарников: плагин пользуется теми же API, что и штатные языки, а весь перевод лежит в открытых JSON-словарях. Если вы работаете в DSH каждый день, русский интерфейс перестаёт быть косметикой — на нём просто меньше спотыкаешься.</p>
+<p>Спасибо авторам <a href="https://github.com/GooDAnDReaDY/dsh-russian-lang">dsh-russian-lang</a> за словари и клиентский бандл — эта статья лишь рассказ о том, как они устроены и как их включить.</p>
+</div>
+<script type="module">
+  try {
+    const { default: mermaid } = await import("https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs");
+    mermaid.initialize({ startOnLoad: true, theme: "dark" });
+  } catch (e) { /* offline: leave the diagram source visible */ }
+</script>
+</body>
+</html>
