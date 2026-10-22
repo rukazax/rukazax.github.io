@@ -10,9 +10,22 @@ html[data-theme="light"] { color-scheme: light;
   --shadow:0 10px 30px rgba(20,20,10,.07); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { margin:0; background:var(--bg); color:var(--text);
+html { background:var(--bg); }
+body { margin:0; color:var(--text);
   font:17px/1.65 "Inter", "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing:antialiased; transition:background .2s ease, color .2s ease; }
+  -webkit-font-smoothing:antialiased; transition:color .2s ease;
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--bg) 58%, transparent), color-mix(in srgb, var(--bg) 72%, transparent)),
+    url("bg.jpg");
+  background-size:cover, cover;
+  background-position:center, center;
+  background-attachment:fixed, fixed;
+  background-repeat:no-repeat, no-repeat; }
+html[data-theme="light"] body {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--bg) 88%, transparent), color-mix(in srgb, var(--bg) 94%, transparent)),
+    url("bg.jpg"); }
 a { color:inherit; text-decoration:none; }
 img { max-width:100%; display:block; }
 .wrap { max-width:1180px; margin:0 auto; padding:0 24px; }
