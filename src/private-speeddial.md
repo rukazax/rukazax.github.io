@@ -85,7 +85,7 @@ flowchart LR
 Ссылки: [приложение для Android (APK)](https://github.com/rukazax/Private_SpeedDial/releases/latest/download/Private-SpeedDial-Android.apk) ·
 [расширение в Chrome Web Store](https://chromewebstore.google.com/detail/private-speeddial/eakakaeklcgnlanmpbndhjdljppehdof) ·
 [исходники и релизы](https://github.com/rukazax/Private_SpeedDial) ·
-[страница приложения с экранами](https://rukazax.github.io/apps/private-speeddial/).
+[страница приложения с экранами](https://rukazax.github.io/apps/private-speeddial.html).
 
 ## Обновления
 
