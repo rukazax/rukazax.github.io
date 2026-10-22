@@ -69,7 +69,7 @@ title: XIO: VPN, который живёт на вашем сервере
 лежат в репозитории). Проект развивает Константин Ерёмин; поддержать можно на
 [x1o.org/pay](https://x1o.org/pay).
 
-- [Исходники и релизы](https://github.com/rukazax/xio_vpn)
+- [Страница продукта](https://rukazax.github.io/apps/xio-vpn.html) · [Исходники и релизы](https://github.com/rukazax/xio_vpn)
 - [Сборки и загрузки](https://github.com/rukazax/xio_vpn/releases) — APK, DEB, ZIP и исходники
 
 ## Кому подойдёт
