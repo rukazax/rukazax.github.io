@@ -1,0 +1,62 @@
+:root { color-scheme: dark; --bg:#0b1220; --card:#111b2d; --edge:#1e293b; --text:#e2e8f0;
+  --muted:#94a3b8; --dim:#64748b; --accent:#22d3ee; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text);
+  font:17px/1.68 "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing:antialiased; }
+.wrap { max-width: 840px; margin: 0 auto; padding: 40px 28px 110px; }
+a { color:#67e8f9; text-decoration:none; border-bottom:1px solid rgba(103,232,249,.3); }
+a:hover { border-color:#67e8f9; }
+.top { display:flex; justify-content:space-between; align-items:center; margin-bottom:44px;
+  font-size:15px; color:var(--dim); }
+.top a { border:0; color:var(--muted); }
+.top a:hover { color:#67e8f9; }
+.cover { width:100%; border-radius:18px; border:1px solid var(--edge); margin:0 0 32px; display:block; }
+h1 { font-size: 42px; line-height:1.18; margin:0 0 14px; letter-spacing:-.02em; }
+h2 { font-size: 27px; margin:52px 0 16px; }
+h3 { font-size: 21px; margin:32px 0 10px; }
+.meta { color:var(--dim); font-size:14px; letter-spacing:.06em; text-transform:uppercase; margin:0 0 18px; }
+.lead { color:var(--muted); font-size:19px; margin:0 0 34px; }
+p { margin:0 0 18px; }
+strong { color:#f8fafc; }
+code { background:#1e293b; padding:2px 6px; border-radius:5px; font-size:.9em;
+  font-family:Consolas,"Cascadia Mono",monospace; color:#a5f3fc; }
+pre.code { background:#0f172a; border:1px solid var(--edge); border-radius:12px; padding:18px 20px;
+  overflow:auto; position:relative; }
+pre.code code { background:none; padding:0; color:#cbd5e1; font-size:14px; }
+pre.code::before { content: attr(data-lang); position:absolute; top:8px; right:12px; font-size:11px;
+  text-transform:uppercase; letter-spacing:.08em; color:#475569; }
+blockquote { margin:24px 0; padding:16px 20px; border-left:3px solid var(--accent);
+  background:#0f172a; border-radius:0 10px 10px 0; color:#cbd5e1; }
+blockquote p { margin:0; }
+ul { padding-left:22px; margin:0 0 20px; } li { margin-bottom:8px; }
+hr { border:0; border-top:1px solid var(--edge); margin:44px 0; }
+img { max-width:100%; border-radius:14px; border:1px solid var(--edge); margin:26px 0; display:block; }
+figure { margin:26px 0; }
+figcaption { color:var(--dim); font-size:14px; margin-top:-14px; }
+.table-wrap { overflow-x:auto; margin:24px 0; }
+table { border-collapse:collapse; width:100%; font-size:15px; }
+th, td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--edge); vertical-align:top; }
+th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+tbody tr:hover { background:#0f172a; }
+kbd { background:#1e293b; border:1px solid #334155; border-bottom-width:2px; border-radius:5px;
+  padding:1px 6px; font:13px Consolas,monospace; }
+.diagram { margin:28px 0; border:1px dashed #334155; border-radius:12px; padding:16px; background:#0f172a; }
+.diagram-cap { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); margin-bottom:10px; }
+.diagram pre { margin:0; white-space:pre-wrap; color:var(--muted); font-size:13px; }
+.tags { margin:26px 0 0; }
+.tags span { display:inline-block; font-size:12px; color:#a5b4fc; border:1px solid #312e81;
+  background:#1e1b4b; border-radius:999px; padding:3px 10px; margin:0 8px 8px 0; }
+footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--edge); color:var(--dim); font-size:14px; }
+.grid { display:grid; gap:22px; }
+.card { display:block; border:1px solid var(--edge); background:var(--card); border-radius:18px;
+  overflow:hidden; transition:border-color .15s ease, transform .15s ease; }
+.card:hover { border-color:var(--accent); transform:translateY(-2px); }
+.card img { margin:0; border:0; border-radius:0; border-bottom:1px solid var(--edge); }
+.card .body { padding:22px 26px 26px; }
+.card h2 { margin:0 0 10px; font-size:24px; color:#f8fafc; }
+.card p { margin:0; color:var(--muted); font-size:16px; }
+.card .meta { margin-bottom:8px; }
+.hero { margin-bottom:44px; }
+.hero h1 { font-size:46px; }
+.hero p { color:var(--muted); font-size:19px; margin:0; }
+.subscribe { margin-top:40px; font-size:15px; color:var(--dim); }
