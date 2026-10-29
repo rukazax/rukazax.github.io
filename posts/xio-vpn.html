@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XIO: VPN, который живёт на вашем сервере — блог rukazax</title>
+<meta name="description" content="Свой VPS, свои пользователи, пять протоколов и один интерфейс на Android, Ubuntu и Windows.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XIO: VPN, который живёт на вашем сервере">
+<meta property="og:description" content="Свой VPS, свои пользователи, пять протоколов и один интерфейс на Android, Ubuntu и Windows.">
+<meta property="og:image" content="https://rukazax.github.io/assets/covers/xio-vpn.png">
+<meta property="og:url" content="https://rukazax.github.io/posts/xio-vpn.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Блог rukazax" href="../feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="page">
+  <nav class="top">
+    <a href="../index.html">← На главную</a>
+    <span style="display:flex;gap:12px;align-items:center">
+      <a href="../index.html#blog">Все статьи</a><button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+    </span>
+  </nav>
+  <article>
+    <img class="cover" src="../assets/covers/xio-vpn.png" alt="XIO: VPN, который живёт на вашем сервере">
+    <h1>XIO: VPN, который живёт на вашем сервере</h1>
+    <p class="meta">2026-10-22 · vpn, android, linux</p>
+    <p class="lead">Свой VPS, свои пользователи, пять протоколов и один интерфейс на Android, Ubuntu и Windows.</p>
+<p>Большинство VPN-приложений устроены одинаково: чужой сервер, подписка, закрытые протоколы и доверие к оператору «на слово». <strong>XIO</strong> переворачивает схему: у вас есть свой VPS, приложение ставит на него сервер по SSH, а клиент на телефоне или компьютере просто подключается к вашему же серверу. Название расшифровывается как <em>X in 1 out</em> — много протоколов внутрь, один интерфейс наружу.</p>
+<h2>Что умеет</h2>
+<ul>
+<li>ставить и обслуживать VPN-сервер на VPS по SSH, управлять пользователями, отзывать и экспортировать доступ;</li>
+<li>автоматически определять формат сторонних конфигураций при импорте;</li>
+<li>держать приоритет протоколов, таймаут попытки и HTTPS-проверку после подключения (по умолчанию <code>youtube.com</code>);</li>
+<li>собирать мультипротокольные профили пользователя и делегировать администрирование с лимитами активных пользователей;</li>
+<li>на Android — раздельное туннелирование, системная тема, выбор иконки, плитка в быстрых настройках и 13 языков;</li>
+<li>на рутованном Android — раздача VPN-соединения; на Windows — экспериментальная интеграция с ICS.</li>
+</ul>
+<h2>Протоколы</h2>
+<p>Ядро приложения умеет несколько транспортов, и это не «список для галочки»: у каждого свой сценарий.</p>
+<div class="table-wrap"><table><thead><tr><th>Протокол</th><th>Зачем нужен</th></tr></thead><tbody><tr><td>Xray / REALITY</td><td>основной рабочий вариант с маскировкой под чужой TLS-сайт</td></tr><tr><td>RIVET / S1 и RIVET / H3</td><td>экспериментальный собственный транспорт (TCP и HTTP/3)</td></tr><tr><td>AWG</td><td>AmneziaWG — WireGuard с обфускацией</td></tr><tr><td>Cloak</td><td>обёртка трафика под браузерный TLS</td></tr></tbody></table></div>
+<p>Раздел <strong>Настройки → Соединение</strong> — это и есть вся «политика подключения»: сайт для проверки, приоритетный протокол, время попытки.</p>
+<div class="table-wrap"><table><thead><tr><th>Настройки соединения</th><th>Протоколы</th></tr></thead><tbody><tr><td><img alt="Настройки соединения" src="../assets/xio/connection-ru.png"></td><td><img alt="Протоколы" src="../assets/xio/protocols-ru.png"></td></tr></tbody></table></div>
+<p>Логика простая: если приоритетный протокол не поднялся за отведённое время, клиент пробует следующий из профиля пользователя. Никаких ручных переключений в три часа ночи.</p>
+<h2>Платформы</h2>
+<div class="table-wrap"><table><thead><tr><th>Платформа</th><th>Состояние</th></tr></thead><tbody><tr><td>Android 8+</td><td>APK для ARM64, ARMv7, x86_64; ARM64 физически проверен на POCO X6 5G</td></tr><tr><td>Ubuntu x64</td><td>DEB и портативный архив, системные тесты на Ubuntu 24.04</td></tr><tr><td>Windows 10/11 x64</td><td>тестовый ZIP: интерфейс проверен в Wine, нативный драйвер и ICS ждут теста на Windows</td></tr><tr><td>iPhone / iPad</td><td>исходный проект Xcode, подписанного IPA нет — валидация Apple впереди</td></tr></tbody></table></div>
+<p>Авторы не притворяются, что всё готово: статусы в таблице — это честная карта зрелости, а не маркетинг.</p>
+<h2>Чего VPN не обещает</h2>
+<p>Этот раздел стоит прочитать до покупки VPS. Даже с TLS провайдер видит входной IP. Строгий allowlist требует доступного ingress: переименовать сайт в конфиге и «пробить» заблокированный сервер нельзя. Сборка не тестировалась на сетях российских операторов, а RIVET — экспериментальный протокол без независимого аудита и без доказанной неотличимости от браузера.</p>
+<p>Иными словами, XIO — это инструмент для тех, кто готов администрировать свой сервер и понимать ограничения, а не «кнопка, которая всё решает».</p>
+<h2>Лицензия и поддержка</h2>
+<p>Собственный код — <strong>GPL-3.0-only</strong>, сторонние зависимости сохраняют свои лицензии (полные тексты лежат в репозитории). Проект развивает Константин Ерёмин.</p>
+<ul>
+<li><a href="https://rukazax.github.io/apps/xio-vpn.html">Страница продукта</a> · <a href="https://github.com/rukazax/xio_vpn">Исходники и релизы</a></li>
+<li><a href="https://github.com/rukazax/xio_vpn/releases">Сборки и загрузки</a> — APK, DEB, ZIP и исходники</li>
+</ul>
+<h2>Кому подойдёт</h2>
+<p>Тем, у кого есть свой VPS и кто хочет управлять доступом сам: выдавать и отзывать пользователей, экспортировать конфиги, не зависеть от чужой подписки. Тем, кому нужен один клиент на Android, Ubuntu и Windows. И тем, кто ценит открытый код: приложение можно собрать и проверить, а не доверять закрытому бинарнику.</p>
+    <div class="tags"><span>vpn</span><span>android</span><span>linux</span><span>gpl</span></div>
+  </article>
+  <footer class="art">
+    <p>Константин · <a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> ·
+    <a href="tel:+79998024040">+7 (999) 802-40-40</a></p>
+  </footer>
+</div>
+<script src="../assets/app.js"></script>
+
+</body>
+</html>

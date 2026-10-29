@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software development — rukazax</title>
+<meta name="description" content="Websites, mobile apps, browser extensions, VPN infrastructure and AI solutions. Konstantin Eremin, Moscow.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Software development — rukazax">
+<meta property="og:description" content="Websites, mobile apps, extensions, VPN and AI solutions end to end.">
+<meta property="og:image" content="https://rukazax.github.io/assets/covers/private-speeddial.png">
+<meta property="og:url" content="https://rukazax.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="alternate" type="application/rss+xml" title="rukazax blog" href="feed.xml">
+<link rel="alternate" hreflang="ru" href="https://rukazax.github.io/">
+<link rel="alternate" hreflang="en" href="https://rukazax.github.io/en.html">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="tb-left">
+      <button class="burger" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="index.html"><span class="dot"></span> RUKAZAX</a>
+    </div>
+    <nav class="navrow"><a href="#services">Services</a><a href="#cases">Products</a><a href="#process">Process</a><a href="#stack">Stack</a><a href="#blog">Blog</a><a href="#contact">Contacts</a></nav>
+    <div class="top-actions">
+      <a class="lang-switch" href="index.html" aria-label="Русская версия">RU</a>
+      <a class="phone" href="tel:+79998024040">+7 (999) 802-40-40</a>
+      <button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+      <button class="btn btn-accent btn-sm" type="button" data-open-form>Request a quote</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="inner"><a href="#services">Services</a><a href="#cases">Products</a><a href="#process">Process</a><a href="#stack">Stack</a><a href="#blog">Blog</a><a href="#contact">Contacts</a></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="hero" id="top">
+    <div class="eyebrow">Software development</div>
+    <h1 class="display">I build digital<br>products <span class="accent">end to end</span></h1>
+    <p class="lead">Websites, mobile apps, browser extensions, VPN infrastructure and AI platforms.
+    From idea and prototype to release, documentation and support.</p>
+    <div class="hero-actions">
+      <button class="btn btn-accent" type="button" data-open-form>Start a project</button>
+      <a class="btn btn-ghost" href="#cases">See the products</a>
+      <a class="btn btn-ghost" href="https://github.com/rukazax" target="_blank" rel="noopener">My GitHub</a>
+    </div>
+
+    <div class="cards-4">
+      <a class="svc-card" href="#services">
+        <div><h3>Websites and services</h3><p>Web platforms, landing pages and internal tools that grow with the business.</p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="svc-card" href="#services">
+        <div><h3>Mobile apps</h3><p>Android and cross-platform apps: from MVP to a product with sync.</p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="svc-card" href="#services">
+        <div><h3>AI solutions</h3><p>Model integration, one API, spend tracking and self-hosted platforms.</p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a class="svc-card" href="#contact">
+        <div><h3>Team for your project</h3><p>Strengthening your team: frontend, backend, mobile development.</p></div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>4</b><span>projects — from production to research</span></div>
+      <div class="stat"><b>5</b><span>platforms: browser, Android, Windows, Ubuntu, iOS</span></div>
+      <div class="stat"><b>13</b><span>interface languages in the products</span></div>
+      <div class="stat"><b>1400+</b><span>automated tests in the x1o platform</span></div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="sec-head">
+      <div><h2>Products, not slide decks</h2>
+      <p>Every project is taken to a state people actually use: a store listing, APK releases,
+      a public website and open source.</p></div>
+    </div>
+    <div class="cases cases-4">
+      <a class="case" href="apps/private-speeddial.html">
+        <img src="assets/covers/private-speeddial.png" alt="Private SpeedDial: bookmarks that belong to you" loading="lazy">
+        <div class="in">
+          <div class="tag">extension · android</div>
+          <h3>Private SpeedDial: bookmarks that belong to you</h3>
+          <p>Chrome extension and Android app sharing one data format: notes, folders and sync through your own cloud.</p>
+        </div>
+      </a>
+      <a class="case" href="apps/xio-vpn.html">
+        <img src="assets/covers/xio-vpn.png" alt="XIO: a VPN that lives on your own server" loading="lazy">
+        <div class="in">
+          <div class="tag">vpn · android · desktop</div>
+          <h3>XIO: a VPN that lives on your own server</h3>
+          <p>Your own VPS, your users, five transports and one interface on Android, Ubuntu and Windows.</p>
+        </div>
+      </a>
+      <a class="case" href="apps/x1o.html">
+        <img src="assets/covers/x1o-harness.png" alt="x1o: one harness for every model" loading="lazy">
+        <div class="in">
+          <div class="tag">self-hosted · llm</div>
+          <h3>x1o: one harness for every model</h3>
+          <p>Self-hosted platform for personal AI assistants: one API, dialogue queue, billing and a cloud plane for tenants.</p>
+        </div>
+      </a>
+      <a class="case" href="apps/econa.html">
+        <img src="assets/covers/econa.png" alt="ECONA: kite–solar–electric catamaran" loading="lazy">
+        <div class="in">
+          <div class="tag">research · catamaran</div>
+          <h3>ECONA: kite–solar–electric catamaran</h3>
+          <p>Ocean-going catamaran with kite traction, solar generation and electric drive: calculations, structure and open documentation.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="sec-head">
+      <div><h2>Services</h2>
+      <p>I take on work that needs the full cycle: architecture and interface, build, release and support.</p></div>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row">
+        <div class="n">01</div>
+        <div><h3>Websites and services</h3><p>Landing pages, corporate sites and internal services: React and TypeScript on the front end, Python or Node on the back end, clean APIs and integrations.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">02</div>
+        <div><h3>Browser extensions</h3><p>Chrome Manifest V3: quick-access panels, sync, data import and export, privacy by default and Web Store publishing.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">03</div>
+        <div><h3>Mobile apps</h3><p>Native Android in Java and Kotlin, cross-platform apps in Dart and Flutter, hybrid WebView apps with a native bridge.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">04</div>
+        <div><h3>Desktop and system integration</h3><p>Windows apps on Avalonia and .NET, Tauri shells, Ubuntu packages, work with system drivers and services.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">05</div>
+        <div><h3>VPN and network infrastructure</h3><p>Your own VPS: setup over SSH, Xray and WireGuard protocols, obfuscation, user management and configuration export.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="n">06</div>
+        <div><h3>AI solutions and LLM integrations</h3><p>Models behind one API, dialogue queue, spend tracking, push notifications and a self-hosted platform under your control.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="sec-head">
+      <div><h2>How the work goes</h2>
+      <p>Short iterations and working builds instead of reports. You see progress every week.</p></div>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Brief</h3><p>We go through the task, constraints and acceptance criteria, and fix the scope of the first version.</p></div>
+      <div class="step"><b>02</b><h3>Prototype</h3><p>We build the skeleton: screens, data model, API. The idea is validated before full development.</p></div>
+      <div class="step"><b>03</b><h3>Development</h3><p>Iterations with working builds. Code, tests, reviews and clear documentation.</p></div>
+      <div class="step"><b>04</b><h3>Support</h3><p>Releases, updates, monitoring. I answer questions and fix what breaks.</p></div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="sec-head">
+      <div><h2>Stack</h2>
+      <p>I pick tools for the task, not for fashion. Everything below is used in real products.</p></div>
+    </div>
+    <div class="chips"><span>TypeScript</span><span>React</span><span>Python</span><span>FastAPI</span><span>Dart</span><span>Flutter</span><span>Java</span><span>Kotlin</span><span>C#</span><span>Avalonia</span><span>Go</span><span>Rust</span><span>PostgreSQL</span><span>SQLite</span><span>Redis</span><span>Docker</span><span>Linux</span><span>Nginx</span><span>GitHub Actions</span><span>Tauri</span></div>
+  </section>
+
+  <section id="blog">
+    <div class="sec-head">
+      <div><h2>Blog</h2>
+      <p>Write-ups of my own products: how they work, which decisions were made and what did not work.</p></div>
+    </div>
+    <div class="bloglist">
+      <a class="blogrow" href="posts/private-speeddial.html">
+        <div><div class="t">Private SpeedDial: закладки, которые принадлежат вам</div><div class="d">2026-10-22 · chrome, android · RU</div></div>
+        <div class="go">→</div>
+      </a>
+      <a class="blogrow" href="posts/xio-vpn.html">
+        <div><div class="t">XIO: VPN, который живёт на вашем сервере</div><div class="d">2026-10-22 · vpn, android · RU</div></div>
+        <div class="go">→</div>
+      </a>
+      <a class="blogrow" href="posts/x1o-harness.html">
+        <div><div class="t">x1o: один харнесс для всех моделей</div><div class="d">2026-10-22 · llm, self-hosted · RU</div></div>
+        <div class="go">→</div>
+      </a>
+      <a class="blogrow" href="posts/ru-deepseek-harness.html">
+        <div><div class="t">Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</div><div class="d">2026-10-22 · deepseek, i18n · RU</div></div>
+        <div class="go">→</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Let us discuss your project</h2>
+      <p>Describe the task in two sentences — I will reply during working hours with a plan and an estimate.
+      The first consultation is free.</p>
+      <button class="btn btn-accent" type="button" data-open-form>Send a message</button>
+      <div class="contact-grid">
+        <div><div class="k">Contact person</div><div class="v">Константин</div></div>
+        <div><div class="k">Phone</div><a class="v" href="tel:+79998024040">+7 (999) 802-40-40</a></div>
+        <div><div class="k">Email</div><a class="v" href="mailto:rukazax@gmail.com">rukazax@gmail.com</a></div>
+        <div><div class="k">GitHub</div><a class="v" href="https://github.com/rukazax">github.com/rukazax</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <span>© 2026 Konstantin</span>
+    <span><a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> · <a href="tel:+79998024040">+7 (999) 802-40-40</a></span>
+  </footer>
+</div>
+
+<div class="modal" id="formModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
+    <h2 id="formTitle">Start a project</h2>
+    <p>Leave your contacts — I will reply during working hours with a plan and an estimate. The first consultation is free.</p>
+    <form id="contactForm" novalidate>
+      <label class="field"><span>Name</span>
+        <input name="name" type="text" autocomplete="name" placeholder="How should I address you" required></label>
+      <label class="field"><span>Phone</span>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required></label>
+      <label class="field"><span>Email</span>
+        <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <label class="field"><span>Task</span>
+        <textarea name="message" rows="4" placeholder="Briefly about the project and timeline" required></textarea></label>
+      <button class="btn btn-accent" type="submit" id="formSubmit" style="width:100%;justify-content:center">Send</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+      <p class="form-note">The message goes to rukazax@gmail.com. The delivery service asks to confirm the address on the first submission — a one-time action.</p>
+    </form>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

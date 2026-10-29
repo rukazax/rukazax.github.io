@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XIO — свой VPN на своих серверах</title>
+<meta name="description" content="VPN-клиент и сервер: установка VPS по SSH, управление пользователями, протоколы Xray, RIVET, AWG и Cloak. Android, Ubuntu, Windows.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XIO — свой VPN на своих серверах">
+<meta property="og:description" content="VPN-клиент и сервер: установка VPS по SSH, управление пользователями, протоколы Xray, RIVET, AWG и Cloak. Android, Ubuntu, Windows.">
+<meta property="og:image" content="https://rukazax.github.io/assets/xio/logo.png">
+<meta property="og:url" content="https://rukazax.github.io/apps/xio-vpn.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="tb-left">
+      <button class="burger" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../index.html"><span class="dot"></span> RUKAZAX</a>
+    </div>
+    <nav class="navrow"><a href="../index.html#services">Услуги</a><a href="../index.html#cases">Продукты</a><a href="../index.html#process">Как работаю</a><a href="../index.html#stack">Технологии</a><a href="../index.html#blog">Блог</a><a href="../index.html#contact">Контакты</a></nav>
+    <div class="top-actions">
+      <a class="phone" href="tel:+79998024040">+7 (999) 802-40-40</a>
+      <button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+      <button class="btn btn-accent btn-sm" type="button" data-open-form>Оставить заявку</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="inner"><a href="../index.html#services">Услуги</a><a href="../index.html#cases">Продукты</a><a href="../index.html#process">Как работаю</a><a href="../index.html#stack">Технологии</a><a href="../index.html#blog">Блог</a><a href="../index.html#contact">Контакты</a></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="hero" id="top">
+    <div class="eyebrow">VPN · Android · Ubuntu · Windows</div>
+    <h1 class="display">XIO</h1>
+    <p class="lead">Свой VPN на своих серверах: один интерфейс, несколько протоколов. Сервер ставится по SSH, доступом управляете вы, а не подписка.</p>
+    <div class="hero-actions">
+      <a class="btn btn-accent" href="https://github.com/rukazax/xio_vpn/releases" target="_blank" rel="noopener">Скачать сборки</a><a class="btn btn-ghost" href="https://github.com/rukazax/xio_vpn" target="_blank" rel="noopener">Исходники на GitHub</a><a class="btn btn-ghost" href="../posts/xio-vpn.html">Читать разбор</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="sec-head">
+      <div><h2>Что умеет</h2><p>Полный цикл: от установки сервера до переключения протоколов на телефоне.</p></div>
+    </div>
+    <div class="cards-4">
+      <div class="svc-card"><div><h3>Свой сервер</h3><p>Установка и обслуживание VPS по SSH — без чужих подписок и общего шлюза.</p></div></div>
+      <div class="svc-card"><div><h3>Управление доступом</h3><p>Пользователи, отзыв доступа и экспорт конфигураций из одного интерфейса.</p></div></div>
+      <div class="svc-card"><div><h3>Несколько протоколов</h3><p>Xray/REALITY, RIVET/S1, RIVET/H3, AWG и Cloak. Приоритет и автоматический перебор при неудаче.</p></div></div>
+      <div class="svc-card"><div><h3>Проверка после подключения</h3><p>HTTPS-проверка (по умолчанию youtube.com) при включённом раздельном туннелировании.</p></div></div>
+      <div class="svc-card"><div><h3>Android-клиент</h3><p>Раздельное туннелирование, системная тема, плитка быстрых настроек, 13 языков.</p></div></div>
+      <div class="svc-card"><div><h3>Кроссплатформенность</h3><p>Android, Ubuntu, Windows (тестовая сборка) и исходники iOS-клиента.</p></div></div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <div class="sec-head">
+      <div><h2>Как это выглядит</h2><p>Экраны Android-клиента: главный экран, настройки соединения и выбор протоколов.</p></div>
+    </div>
+    <div class="cases compact">
+      <div class="case" style="cursor:default">
+        <img src="../assets/xio/main-ru.jpg" alt="Главная" loading="lazy">
+        <div class="in"><div class="tag">Главная</div><p>Подключение, выбор сервера и счётчики трафика на одном экране.</p></div>
+      </div>
+      <div class="case" style="cursor:default">
+        <img src="../assets/xio/connection-ru.png" alt="Настройки соединения" loading="lazy">
+        <div class="in"><div class="tag">Настройки соединения</div><p>Сайт для проверки, приоритетный протокол, время попытки.</p></div>
+      </div>
+      <div class="case" style="cursor:default">
+        <img src="../assets/xio/protocols-ru.png" alt="Протоколы" loading="lazy">
+        <div class="in"><div class="tag">Протоколы</div><p>Какие транспорты доступны на этой платформе.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="sec-head">
+      <div><h2>Чего VPN не обещает</h2><p>Честные ограничения, которые лучше знать до покупки VPS.</p></div>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row"><div class="n">01</div><div><h3>Провайдер видит входной IP</h3><p>Даже при TLS оператор связи знает, к какому адресу вы подключаетесь.</p></div></div>
+      <div class="svc-row"><div class="n">02</div><div><h3>Allowlist требует доступного ingress</h3><p>Переименовать сайт в конфиге недостаточно — нужен работающий вход на сервер.</p></div></div>
+      <div class="svc-row"><div class="n">03</div><div><h3>RIVET экспериментальный</h3><p>Независимого аудита и доказанной неотличимости от браузера пока нет.</p></div></div>
+      <div class="svc-row"><div class="n">04</div><div><h3>Не тестировался на сетях РФ</h3><p>Поведение у конкретных операторов нужно проверять самостоятельно.</p></div></div>
+    </div>
+  </section>
+
+  <section id="details">
+    <div class="sec-head">
+      <div><h2>Платформы и протоколы</h2><p>Статусы — честная карта зрелости, а не маркетинг.</p></div>
+    </div>
+    <div class="chips" style="margin-bottom:22px"><span>Xray / REALITY</span><span>RIVET / S1</span><span>RIVET / H3</span><span>AmneziaWG</span><span>Cloak</span></div>
+    <div class="steps">
+      <div class="step"><b>Android 8+</b><p>APK для ARM64, ARMv7 и x86_64; ARM64 проверен на POCO X6 5G.</p></div>
+      <div class="step"><b>Ubuntu x64</b><p>DEB и портативный архив, системные тесты на Ubuntu 24.04.</p></div>
+      <div class="step"><b>Windows 10/11</b><p>Тестовый ZIP: интерфейс проверен в Wine, драйвер ждёт теста на Windows.</p></div>
+      <div class="step"><b>iPhone / iPad</b><p>Исходный проект Xcode; подписанного IPA нет.</p></div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="contact">
+      <h2>Забрать XIO</h2>
+      <p>Сборки и исходники открыты: можно поставить сервер, подключить телефон и проверить, как это работает у вашего оператора.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="https://github.com/rukazax/xio_vpn/releases" target="_blank" rel="noopener">Скачать сборки</a><a class="btn btn-ghost" href="https://github.com/rukazax/xio_vpn" target="_blank" rel="noopener">Исходники на GitHub</a><a class="btn btn-ghost" href="../posts/xio-vpn.html">Читать разбор</a>
+      </div>
+      <p style="color:var(--dim);font-size:14px;margin:18px 0 0;max-width:70ch">Лицензия: GPL-3.0-only для собственного кода; сторонние зависимости сохраняют свои лицензии.</p>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <span>© 2026 Константин</span>
+    <span><a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> · <a href="tel:+79998024040">+7 (999) 802-40-40</a></span>
+  </footer>
+</div>
+
+<div class="modal" id="formModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
+    <h2 id="formTitle">Обсудим проект</h2>
+    <p>Оставьте контакты — отвечу в рабочее время, предложу план и оценку. Первая консультация бесплатная.</p>
+    <form id="contactForm" novalidate>
+      <label class="field"><span>Имя</span>
+        <input name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required></label>
+      <label class="field"><span>Телефон</span>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required></label>
+      <label class="field"><span>Электронная почта</span>
+        <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <label class="field"><span>Задача</span>
+        <textarea name="message" rows="4" placeholder="Коротко о проекте и сроках" required></textarea></label>
+      <button class="btn btn-accent" type="submit" id="formSubmit" style="width:100%;justify-content:center">Отправить</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+      <p class="form-note">Письмо уходит на rukazax@gmail.com. Сервис доставки при первой отправке
+      попросит подтвердить адрес — это одноразовое действие.</p>
+    </form>
+  </div>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

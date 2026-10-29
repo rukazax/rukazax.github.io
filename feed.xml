@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Блог rukazax</title>
+    <link>https://rukazax.github.io/</link>
+    <description>Разборы собственных продуктов: как устроены, какие решения приняты и что не получилось.</description>
+    <language>ru</language>
+    <lastBuildDate>Thu, 22 Oct 2026 09:00:00 +0300</lastBuildDate>
+    <atom:link href="https://rukazax.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Private SpeedDial: закладки, которые принадлежат вам</title>
+      <link>https://rukazax.github.io/posts/private-speeddial.html</link>
+      <guid isPermaLink="true">https://rukazax.github.io/posts/private-speeddial.html</guid>
+      <pubDate>Thu, 22 Oct 2026 09:00:00 +0300</pubDate>
+      <description>Панель быстрого доступа с заметками, папками и синхронизацией в вашем облаке — расширение Chrome и приложение Android.</description>
+    </item>
+    <item>
+      <title>XIO: VPN, который живёт на вашем сервере</title>
+      <link>https://rukazax.github.io/posts/xio-vpn.html</link>
+      <guid isPermaLink="true">https://rukazax.github.io/posts/xio-vpn.html</guid>
+      <pubDate>Thu, 22 Oct 2026 09:00:00 +0300</pubDate>
+      <description>Свой VPS, свои пользователи, пять протоколов и один интерфейс на Android, Ubuntu и Windows.</description>
+    </item>
+    <item>
+      <title>x1o: один харнесс для всех моделей</title>
+      <link>https://rukazax.github.io/posts/x1o-harness.html</link>
+      <guid isPermaLink="true">https://rukazax.github.io/posts/x1o-harness.html</guid>
+      <pubDate>Thu, 22 Oct 2026 09:00:00 +0300</pubDate>
+      <description>Самохостная платформа личных ИИ-ассистентов: единый API, очередь диалогов, биллинг и облачная плоскость для тенантов.</description>
+    </item>
+    <item>
+      <title>Русский язык для DeepSeek Harness: как сообщество сделало локализацию, а я её установил</title>
+      <link>https://rukazax.github.io/posts/ru-deepseek-harness.html</link>
+      <guid isPermaLink="true">https://rukazax.github.io/posts/ru-deepseek-harness.html</guid>
+      <pubDate>Thu, 22 Oct 2026 09:00:00 +0300</pubDate>
+      <description>Разбираем плагин dsh-russian-lang: откуда в DeepSeek Harness берётся перевод, как он устроен внутри и как включить русский интерфейс за пять минут.</description>
+    </item>
+  </channel>
+</rss>

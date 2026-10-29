@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private SpeedDial: закладки, которые принадлежат вам — блог rukazax</title>
+<meta name="description" content="Панель быстрого доступа с заметками, папками и синхронизацией в вашем облаке — расширение Chrome и приложение Android.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Private SpeedDial: закладки, которые принадлежат вам">
+<meta property="og:description" content="Панель быстрого доступа с заметками, папками и синхронизацией в вашем облаке — расширение Chrome и приложение Android.">
+<meta property="og:image" content="https://rukazax.github.io/assets/covers/private-speeddial.png">
+<meta property="og:url" content="https://rukazax.github.io/posts/private-speeddial.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Блог rukazax" href="../feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="page">
+  <nav class="top">
+    <a href="../index.html">← На главную</a>
+    <span style="display:flex;gap:12px;align-items:center">
+      <a href="../index.html#blog">Все статьи</a><button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+    </span>
+  </nav>
+  <article>
+    <img class="cover" src="../assets/covers/private-speeddial.png" alt="Private SpeedDial: закладки, которые принадлежат вам">
+    <h1>Private SpeedDial: закладки, которые принадлежат вам</h1>
+    <p class="meta">2026-10-22 · chrome, android, privacy</p>
+    <p class="lead">Панель быстрого доступа с заметками, папками и синхронизацией в вашем облаке — расширение Chrome и приложение Android.</p>
+<p>Обычные закладки живут внутри браузера: синхронизация идёт через аккаунт вендора, а на телефоне — отдельный, часто несовместимый список. <strong>Private SpeedDial</strong> решает это иначе: плитки быстрого доступа к сайтам, заметки и папки живут локально, а синхронизируются туда, куда вы сами укажете — в свой Nextcloud, WebDAV или поддерживаемое облако.</p>
+<p>Это два приложения с общим форматом данных: расширение Chrome (Manifest V3) и приложение для Android. Интерфейс переведён на 13 языков, включая русский.</p>
+<p><img alt="Интерфейс расширения в Chromium" src="../assets/private-speeddial/browser.png"></p>
+<h2>Что умеет</h2>
+<div class="table-wrap"><table><thead><tr><th>Возможность</th><th>Расширение</th><th>Android</th></tr></thead><tbody><tr><td>Закладки, вложенные папки, заметки</td><td>Да</td><td>Да</td></tr><tr><td>Профили, темы, цвета, фоны</td><td>Да</td><td>Да</td></tr><tr><td>Синхронизация</td><td>Ручная и автоматическая</td><td>Пока приложение открыто</td></tr><tr><td>Пароли отдельных папок</td><td>Да</td><td>Да</td></tr><tr><td>Импорт JSON / HTML / CSV / FVD</td><td>Да</td><td>Да</td></tr><tr><td>Поиск по закладкам и заметкам</td><td>Да</td><td>В меню ☰</td></tr></tbody></table></div>
+<p>На десктопе дополнительно есть курсы валют, интернет-поиск, мастер-пароль с автоблокировкой и режим «Не беспокоить». На телефоне этих функций нет намеренно: мобильная версия — про быстрый доступ, а не про рабочий стол.</p>
+<div class="table-wrap"><table><thead><tr><th>Android: главный экран</th><th>Android: меню и заметки</th></tr></thead><tbody><tr><td><img alt="Главный экран" src="../assets/private-speeddial/android-home.png"></td><td><img alt="Меню" src="../assets/private-speeddial/android-menu.png"></td></tr></tbody></table></div>
+<h2>Как устроена синхронизация</h2>
+<p>Обязательного сервера у проекта нет — и это главное архитектурное решение.</p>
+<div class="diagram"><div class="diagram-cap">схема</div><pre class="mermaid">flowchart LR
+  B[Расширение Chrome] --&gt; BI[(IndexedDB)]
+  A[Android: WebView] --&gt; N[Нативный мост Java]
+  N --&gt; DB[(Приватная SQLite)]
+  B --&gt; S[Движок синхронизации]
+  N --&gt; S
+  S --&gt; E{Ключ шифрования задан?}
+  E -- Да --&gt; C[AES-GCM + PBKDF2]
+  E -- Нет --&gt; J[Открытый JSON]
+  C --&gt; P[Ваше облако / WebDAV]
+  J --&gt; P</pre></div>
+<p>Файл синхронизации называется <code>private-speeddial.json</code>. Реквизиты подключения и ключ шифрования в него не попадают — они остаются на устройстве. Поддерживаются три операции: объединение, загрузка на сервер и скачивание с сервера; есть учёт времени изменений и удалений, история и обработка первоначального конфликта.</p>
+<h2>Приватность без иллюзий</h2>
+<p>Авторы честно пишут то, что обычно опускают: <strong>приватность не означает отсутствие сети</strong>. Ваш облачный провайдер, сервис иконок, фоны по URL и GitHub видят метаданные соответствующих запросов. Локальная база не шифруется самим приложением, а пароль папки — это защита от случайного взгляда, а не от доступа к устройству. Полный разбор — в <code>docs/SECURITY.md</code> репозитория.</p>
+<p>Зато нет центральной регистрации, нет аккаунта проекта и нет сервера, который хранит ваши закладки.</p>
+<h2>Импорт и переезд</h2>
+<p>Данные не заперты в формате приложения: импорт из JSON, HTML, CSV и FVD (формат Speed Dial из старых расширений), экспорт в JSON и HTML. Переезд с другого менеджера закладок — это несколько кликов, а не ручной перенос.</p>
+<h2>Связка с мобильным приложением</h2>
+<p>Расширение и Android-приложение — не два разных продукта, а две половины одного: общий формат данных, один файл синхронизации <code>private-speeddial.json</code>, одинаковые папки, заметки и профили. Добавили закладку на телефоне — она приезжает на компьютер при следующей синхронизации, и наоборот.</p>
+<ul>
+<li><strong>Android 8.0+</strong>, APK ставится поверх старой версии, данные сохраняются.</li>
+<li><strong>Синхронизация на телефоне</strong> работает, пока приложение открыто; на компьютере — по расписанию и вручную.</li>
+<li><strong>Ключ шифрования</strong> задаёте вы: без него данные уходят обычным JSON, с ним — AES-256-GCM.</li>
+<li><strong>Пароли папок</strong> и мастер-пароль есть в обеих версиях.</li>
+</ul>
+<p>Ссылки: <a href="https://github.com/rukazax/Private_SpeedDial/releases/latest/download/Private-SpeedDial-Android.apk">приложение для Android (APK)</a> · <a href="https://chromewebstore.google.com/detail/private-speeddial/eakakaeklcgnlanmpbndhjdljppehdof">расширение в Chrome Web Store</a> · <a href="https://github.com/rukazax/Private_SpeedDial">исходники и релизы</a> · <a href="https://rukazax.github.io/apps/private-speeddial.html">страница приложения с экранами</a>.</p>
+<h2>Обновления</h2>
+<p>Расширение из Chrome Web Store обновляет сам браузер. Android-приложение раз в неделю (и не чаще) спрашивает GitHub Releases о новой версии и предлагает обновиться — <strong>установку всегда выполняет пользователь</strong>, автоматической установки кода нет. Кнопка «Пропустить релиз» запоминает конкретную версию на конкретном устройстве.</p>
+<h2>Установка</h2>
+<ul>
+<li><a href="https://chromewebstore.google.com/detail/private-speeddial/eakakaeklcgnlanmpbndhjdljppehdof">Private SpeedDial в Chrome Web Store</a></li>
+<li><a href="https://github.com/rukazax/Private_SpeedDial/releases/latest/download/Private-SpeedDial-Android.apk">APK для Android 8.0+</a></li>
+<li><a href="https://github.com/rukazax/Private_SpeedDial">Исходники и релизы на GitHub</a></li>
+</ul>
+<p>Расширение не заменяет новую вкладку автоматически и не пытается быть «умнее» браузера: это отдельная панель, которая открывается по клику или <code>Ctrl+Shift+Y</code>.</p>
+<h2>Кому подойдёт</h2>
+<p>Тем, у кого уже есть Nextcloud или WebDAV и кто не хочет отдавать список закладок третьей стороне. Тем, кто пользуется и браузером, и Android-телефоном и устал от двух несвязанных списков. И тем, кому важно, что проект можно почитать, собрать и проверить самостоятельно.</p>
+    <div class="tags"><span>chrome</span><span>android</span><span>privacy</span><span>продукт</span></div>
+  </article>
+  <footer class="art">
+    <p>Константин · <a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> ·
+    <a href="tel:+79998024040">+7 (999) 802-40-40</a></p>
+  </footer>
+</div>
+<script src="../assets/app.js"></script>
+<script src="../assets/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true, theme: "dark" });</script>
+</body>
+</html>

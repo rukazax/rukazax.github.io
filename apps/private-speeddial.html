@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private SpeedDial — закладки и заметки на ПК и Android</title>
+<meta name="description" content="Панель быстрого доступа к сайтам с заметками, папками и синхронизацией в вашем облаке. Расширение Chrome и приложение Android.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Private SpeedDial — закладки и заметки на ПК и Android">
+<meta property="og:description" content="Панель быстрого доступа к сайтам с заметками, папками и синхронизацией в вашем облаке. Расширение Chrome и приложение Android.">
+<meta property="og:image" content="https://rukazax.github.io/assets/private-speeddial/icon128.png">
+<meta property="og:url" content="https://rukazax.github.io/apps/private-speeddial.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="tb-left">
+      <button class="burger" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../index.html"><span class="dot"></span> RUKAZAX</a>
+    </div>
+    <nav class="navrow"><a href="../index.html#services">Услуги</a><a href="../index.html#cases">Продукты</a><a href="../index.html#process">Как работаю</a><a href="../index.html#stack">Технологии</a><a href="../index.html#blog">Блог</a><a href="../index.html#contact">Контакты</a></nav>
+    <div class="top-actions">
+      <a class="phone" href="tel:+79998024040">+7 (999) 802-40-40</a>
+      <button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+      <button class="btn btn-accent btn-sm" type="button" data-open-form>Оставить заявку</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="inner"><a href="../index.html#services">Услуги</a><a href="../index.html#cases">Продукты</a><a href="../index.html#process">Как работаю</a><a href="../index.html#stack">Технологии</a><a href="../index.html#blog">Блог</a><a href="../index.html#contact">Контакты</a></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="hero" id="top">
+    <div class="eyebrow">Расширение Chrome · Приложение Android</div>
+    <h1 class="display">Private SpeedDial</h1>
+    <p class="lead">Ваши закладки и заметки — на компьютере и телефоне, с синхронизацией в выбранное вами облако. Без аккаунта, без телеметрии, без рекламы.</p>
+    <div class="hero-actions">
+      <a class="btn btn-accent" href="https://chromewebstore.google.com/detail/private-speeddial/eakakaeklcgnlanmpbndhjdljppehdof" target="_blank" rel="noopener">Установить в Chrome</a><a class="btn btn-ghost" href="https://github.com/rukazax/Private_SpeedDial/releases/latest/download/Private-SpeedDial-Android.apk">Скачать APK для Android</a><a class="btn btn-ghost" href="https://github.com/rukazax/Private_SpeedDial" target="_blank" rel="noopener">Репозиторий на GitHub</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="sec-head">
+      <div><h2>Всё под рукой</h2><p>Плитки, папки, заметки и поиск — настраиваемая стартовая страница, которая принадлежит только вам.</p></div>
+    </div>
+    <div class="cards-4">
+      <div class="svc-card"><div><h3>Плитки закладок</h3><p>Иконки, цвета и фоны, вложенные папки плиток и папки заметок — всё на одной панели.</p></div></div>
+      <div class="svc-card"><div><h3>Заметки с Markdown</h3><p>Быстрые заметки рядом с плитками: заголовки, списки, ссылки и код.</p></div></div>
+      <div class="svc-card"><div><h3>Поиск в один клик</h3><p>По закладкам, заметкам и истории — или сразу поиск в интернете.</p></div></div>
+      <div class="svc-card"><div><h3>Курсы валют</h3><p>Виджет на панели: USD и EUR к рублю. Отключается в настройках.</p></div></div>
+      <div class="svc-card"><div><h3>Гибкий дизайн</h3><p>Тёмная и светлая темы, галерея фонов, автосмена, плотность сетки.</p></div></div>
+      <div class="svc-card"><div><h3>Профили</h3><p>Работа, семья, личное — отдельные наборы плиток и настроек под каждый сценарий.</p></div></div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <div class="sec-head">
+      <div><h2>Как это выглядит</h2><p>Скриншоты сделаны на тестовых данных в отдельном профиле браузера.</p></div>
+    </div>
+    <div class="cases">
+      <div class="case" style="cursor:default">
+        <img src="../assets/private-speeddial/shot-newtab.png" alt="Новая вкладка" loading="lazy">
+        <div class="in"><div class="tag">Новая вкладка</div><p>Панель с плитками, поиском и заметками.</p></div>
+      </div>
+      <div class="case" style="cursor:default">
+        <img src="../assets/private-speeddial/shot-popup.png" alt="Попап расширения" loading="lazy">
+        <div class="in"><div class="tag">Попап расширения</div><p>Быстрый доступ из панели браузера.</p></div>
+      </div>
+      <div class="case" style="cursor:default">
+        <img src="../assets/private-speeddial/shot-options.png" alt="Настройки" loading="lazy">
+        <div class="in"><div class="tag">Настройки</div><p>Темы, фоны, профили и синхронизация.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="sec-head">
+      <div><h2>Приватность — не функция, а принцип</h2><p>Расширение ничего не отправляет разработчику: серверов у проекта нет. Данные принадлежат вам.</p></div>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row"><div class="n">01</div><div><h3>Шифрование AES-GCM</h3><p>Данные шифруются ключом из вашей парольной фразы (PBKDF2, 310 000 итераций) — облако видит только зашифрованный файл.</p></div></div>
+      <div class="svc-row"><div class="n">02</div><div><h3>Мастер-пароль</h3><p>Дополнительная защита интерфейса: автоблокировка и режим «Не беспокоить».</p></div></div>
+      <div class="svc-row"><div class="n">03</div><div><h3>Пароли папок</h3><p>Отдельный пароль для каждой папки — для рабочих закладок или личных заметок.</p></div></div>
+      <div class="svc-row"><div class="n">04</div><div><h3>Ноль аналитики</h3><p>Ни телеметрии, ни трекеров, ни рекламы.</p></div></div>
+    </div>
+  </section>
+
+  <section id="details">
+    <div class="sec-head">
+      <div><h2>Синхронизация — через ваше облако</h2><p>Никаких чужих серверов: подключите WebDAV или облачный диск, и данные будут синхронизироваться между устройствами.</p></div>
+    </div>
+    <div class="chips" style="margin-bottom:22px"><span>WebDAV</span><span>Synology</span><span>Nextcloud</span><span>Яндекс Диск</span><span>Облако Mail.ru</span><span>Dropbox</span><span>Box</span><span>OneDrive</span><span>pCloud</span></div>
+    <div class="steps">
+      <div class="step"><b>Объединение</b><p>Умное слияние данных с учётом времени изменения записей.</p></div>
+      <div class="step"><b>На сервер</b><p>Выгрузка локальных данных с защитой от случайного затирания.</p></div>
+      <div class="step"><b>С сервера</b><p>Загрузка данных из облака на новое устройство.</p></div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="contact">
+      <h2>Мобильное приложение</h2>
+      <p>Расширение и Android-приложение — две половины одного продукта: общий формат данных, один файл private-speeddial.json, одинаковые папки и заметки. Добавили закладку на телефоне — она приезжает на компьютер при следующей синхронизации.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="https://chromewebstore.google.com/detail/private-speeddial/eakakaeklcgnlanmpbndhjdljppehdof" target="_blank" rel="noopener">Установить в Chrome</a><a class="btn btn-ghost" href="https://github.com/rukazax/Private_SpeedDial/releases/latest/download/Private-SpeedDial-Android.apk">Скачать APK для Android</a><a class="btn btn-ghost" href="https://github.com/rukazax/Private_SpeedDial" target="_blank" rel="noopener">Репозиторий на GitHub</a>
+      </div>
+      <p style="color:var(--dim);font-size:14px;margin:18px 0 0;max-width:70ch">Android 8.0+, APK ставится поверх старой версии без потери данных. На телефоне синхронизация работает, пока приложение открыто.</p>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <span>© 2026 Константин</span>
+    <span><a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> · <a href="tel:+79998024040">+7 (999) 802-40-40</a></span>
+  </footer>
+</div>
+
+<div class="modal" id="formModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
+    <h2 id="formTitle">Обсудим проект</h2>
+    <p>Оставьте контакты — отвечу в рабочее время, предложу план и оценку. Первая консультация бесплатная.</p>
+    <form id="contactForm" novalidate>
+      <label class="field"><span>Имя</span>
+        <input name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required></label>
+      <label class="field"><span>Телефон</span>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required></label>
+      <label class="field"><span>Электронная почта</span>
+        <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <label class="field"><span>Задача</span>
+        <textarea name="message" rows="4" placeholder="Коротко о проекте и сроках" required></textarea></label>
+      <button class="btn btn-accent" type="submit" id="formSubmit" style="width:100%;justify-content:center">Отправить</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+      <p class="form-note">Письмо уходит на rukazax@gmail.com. Сервис доставки при первой отправке
+      попросит подтвердить адрес — это одноразовое действие.</p>
+    </form>
+  </div>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>x1o: один харнесс для всех моделей — блог rukazax</title>
+<meta name="description" content="Самохостная платформа личных ИИ-ассистентов: единый API, очередь диалогов, биллинг и облачная плоскость для тенантов.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="x1o: один харнесс для всех моделей">
+<meta property="og:description" content="Самохостная платформа личных ИИ-ассистентов: единый API, очередь диалогов, биллинг и облачная плоскость для тенантов.">
+<meta property="og:image" content="https://rukazax.github.io/assets/covers/x1o-harness.png">
+<meta property="og:url" content="https://rukazax.github.io/posts/x1o-harness.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Блог rukazax" href="../feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="page">
+  <nav class="top">
+    <a href="../index.html">← На главную</a>
+    <span style="display:flex;gap:12px;align-items:center">
+      <a href="../index.html#blog">Все статьи</a><button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+    </span>
+  </nav>
+  <article>
+    <img class="cover" src="../assets/covers/x1o-harness.png" alt="x1o: один харнесс для всех моделей">
+    <h1>x1o: один харнесс для всех моделей</h1>
+    <p class="meta">2026-10-22 · llm, self-hosted, python</p>
+    <p class="lead">Самохостная платформа личных ИИ-ассистентов: единый API, очередь диалогов, биллинг и облачная плоскость для тенантов.</p>
+<h2>Что это</h2>
+<p><strong>x1o</strong> — самохостная платформа личных ИИ-ассистентов. Это харнесс-оркестратор: он превращает набор LLM-API в готовый продукт. Пользователь открывает Telegram, браузер или Windows-приложение и общается со своим ассистентом, а харнесс решает, какой моделью отвечать, где хранить историю, сколько это стоит и как не пропустить ответ.</p>
+<p>Ключевые решения, на которых держится продукт:</p>
+<ul>
+<li><strong>Один вход, много моделей.</strong> OpenAI, DeepSeek и Anthropic преднастроены, Ollama — для локальных моделей. Новый провайдер подключается конфигом <code>providers.yaml</code>, без кода.</li>
+<li><strong>Деньги под контролем.</strong> Журнал расходов считает токены и оценку в USD по явно заданным ценам. Если цены нет, стоимость остаётся <code>null</code> — «ноль» и «неизвестно» это разные вещи.</li>
+<li><strong>Честный биллинг.</strong> Статусы <code>paid → grace → suspended</code> с видимыми датами, автосписаний с карты нет by design.</li>
+<li><strong>Безопасность по построению.</strong> Секреты только из окружения, fail-closed, подписанные вебхуки, ноль телеметрии.</li>
+</ul>
+<h2>Архитектура</h2>
+<p><img alt="Архитектура x1o" src="../assets/covers/x1o-architecture.png"></p>
+<p>Платформа разделена на три слоя.</p>
+<p><strong>Клиенты</strong> — Telegram-бот, web-чат и Windows-приложение (Avalonia с WSL2-backend). Все они ходят в один API, поэтому история, настройки и лимиты общие.</p>
+<p><strong>Ядро</strong> — сессии и очередь диалогов, переключение провайдеров, TLS и bearer-аутентификация, хранилище. Запрос не теряется при смене модели и не дублируется при обрыве связи.</p>
+<p><strong>Модели</strong> — провайдеры, описанные конфигом. Рядом живёт денежный контур: журнал расходов в <code>Decimal</code>, цены в USD и агрегации по дню и месяцу.</p>
+<p>Отдельно есть <strong>облачная плоскость</strong>: тенанты, Docker-провижининг, TTL и пуш-релей FCM/APNs — для тех, кто ставит платформу не только себе.</p>
+<h2>Лицензия</h2>
+<p>Собственный код — <strong>MIT</strong>: можно использовать, изменять и распространять, в том числе в закрытых продуктах, при сохранении текста лицензии. Сторонние зависимости сохраняют свои лицензии — их перечень лежит в репозитории проекта.</p>
+<p>Репозиторий закрыт: x1o находится в активной разработке, публичного сайта нет. Обзор продукта — на <a href="https://rukazax.github.io/apps/x1o.html">странице x1o</a>. Эта заметка — обзор продукта, а не инструкция по установке.</p>
+    <div class="tags"><span>llm</span><span>self-hosted</span><span>python</span><span>продукт</span></div>
+  </article>
+  <footer class="art">
+    <p>Константин · <a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> ·
+    <a href="tel:+79998024040">+7 (999) 802-40-40</a></p>
+  </footer>
+</div>
+<script src="../assets/app.js"></script>
+
+</body>
+</html>
