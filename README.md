@@ -29,7 +29,7 @@
 | [Структура репозитория](#структура-репозитория) | что где лежит |
 | [Сборка и публикация](#сборка-и-публикация) | команды, токен, атомарный коммит |
 | [Возможности сайта](#возможности-сайта) | темы, меню, форма заявки, два языка |
-| [Продукты](#продукты) | Private SpeedDial, XIO, x1o, ECONA |
+| [Продукты](#продукты) | Private SpeedDial, XIO, x1o, dsh_hub, ECONA |
 | [Контакты](#контакты) | как связаться |
 | [Лицензия](#лицензия) | MIT для кода, © для текстов |
 
@@ -42,6 +42,7 @@
 | Private SpeedDial | [/apps/private-speeddial.html](https://rukazax.github.io/apps/private-speeddial.html) | закладки и заметки для Chrome и Android |
 | XIO | [/apps/xio-vpn.html](https://rukazax.github.io/apps/xio-vpn.html) | VPN на своих серверах: Android, Ubuntu, Windows |
 | x1o | [/apps/x1o.html](https://rukazax.github.io/apps/x1o.html) | self-hosted платформа личных AI-ассистентов |
+| dsh_hub | [/apps/dsh-hub.html](https://rukazax.github.io/apps/dsh-hub.html) | федерация DeepSeek Harness: хаб, узлы и телефон |
 | ECONA | [/apps/econa.html](https://rukazax.github.io/apps/econa.html) | исследовательский концепт кайт-солнечного катамарана |
 | Блог | [/#blog](https://rukazax.github.io/#blog) | статьи о продуктах и история локализации DeepSeek Harness |
 | RSS | [/feed.xml](https://rukazax.github.io/feed.xml) | лента блога |
@@ -73,7 +74,7 @@ flowchart LR
 index.html              лендинг услуг (RU)
 en.html                 лендинг услуг (EN)
 404.html                страница «не найдено» в стиле сайта
-apps/                   страницы продуктов: private-speeddial, xio-vpn, x1o, econa
+apps/                   страницы продуктов: private-speeddial, xio-vpn, x1o, dsh-hub, econa
 posts/                  статьи блога (сгенерированный HTML)
 src/                    исходники статей в Markdown
 assets/                 site.css, app.js, обложки, скриншоты, рендеры ECONA, mermaid
@@ -126,6 +127,9 @@ node tools/publish.mjs          # загрузка папки на GitHub Pages
   Android, Ubuntu, Windows: https://github.com/rukazax/xio_vpn
 - **x1o** — self-hosted платформа личных AI-ассистентов: один API, очередь диалогов, учёт
   расходов, push-уведомления. Приватный репозиторий, публичного сайта нет.
+- **dsh_hub** — федерация DeepSeek Harness: один экземпляр становится хабом, остальные узлами,
+  телефон — пульт и исполнитель. Чужие сессии в одном окне, единые ключи моделей, общая память:
+  https://github.com/rukazax/dsh_hub
 - **ECONA** — исследовательский концепт океанского кайт-солнечно-электрического катамарана:
   https://github.com/rukazax/econa · https://rukazax.github.io/econa/
 
@@ -156,6 +160,7 @@ The site is plain static HTML published with GitHub Pages — no server side, no
 | Private SpeedDial | [/apps/private-speeddial.html](https://rukazax.github.io/apps/private-speeddial.html) | bookmarks and notes for Chrome and Android |
 | XIO | [/apps/xio-vpn.html](https://rukazax.github.io/apps/xio-vpn.html) | a VPN on your own servers: Android, Ubuntu, Windows |
 | x1o | [/apps/x1o.html](https://rukazax.github.io/apps/x1o.html) | self-hosted platform for personal AI assistants |
+| dsh_hub | [/apps/dsh-hub.html](https://rukazax.github.io/apps/dsh-hub.html) | DeepSeek Harness federation: hub, nodes and phone |
 | ECONA | [/apps/econa.html](https://rukazax.github.io/apps/econa.html) | research concept of a kite–solar catamaran |
 | Blog | [/#blog](https://rukazax.github.io/#blog) | product write-ups and the DeepSeek Harness localisation story |
 | RSS | [/feed.xml](https://rukazax.github.io/feed.xml) | blog feed |
@@ -187,7 +192,7 @@ modal and its messages in both languages.
 index.html              services landing (RU)
 en.html                 services landing (EN)
 404.html                "not found" page in the site style
-apps/                   product pages: private-speeddial, xio-vpn, x1o, econa
+apps/                   product pages: private-speeddial, xio-vpn, x1o, dsh-hub, econa
 posts/                  blog articles (generated HTML)
 src/                    article sources in Markdown
 assets/                 site.css, app.js, covers, screenshots, ECONA renders, mermaid
@@ -240,6 +245,9 @@ commits and no half-published state.
   Android, Ubuntu, Windows: https://github.com/rukazax/xio_vpn
 - **x1o** — self-hosted platform for personal AI assistants: one API, dialogue queue, spend tracking,
   push notifications. Private repository, no public site.
+- **dsh_hub** — a DeepSeek Harness federation: one instance becomes the hub, the rest are nodes,
+  the phone is both remote and executor. Other devices' sessions in one window, one set of model
+  keys, one shared memory: https://github.com/rukazax/dsh_hub
 - **ECONA** — research concept of an ocean-going kite–solar–electric catamaran:
   https://github.com/rukazax/econa · https://rukazax.github.io/econa/
 

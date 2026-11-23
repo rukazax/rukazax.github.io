@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0b0f"/>
+      <stop offset="1" stop-color="#08080a"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1b1b21" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.78" cy="0.18" r="0.65">
+      <stop offset="0" stop-color="#fbf237" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#fbf237" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.55"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="0" y="0" width="8" height="630" fill="#fbf237"/>
+
+  <text x="80" y="132" fill="#c9c23a" font-family="DejaVu Sans, sans-serif" font-size="21"
+        letter-spacing="5.2" font-weight="bold">SELF-HOSTED · FEDERATION</text>
+
+  <text x="76" y="292" fill="#f5f5f4" font-family="DejaVu Sans, sans-serif" font-size="118" font-weight="bold">dsh_hub</text>
+
+  <line x1="80" y1="346" x2="300" y2="346" stroke="#fbf237" stroke-width="4"/>
+
+  <text x="80" y="424" fill="#d4d4d8" font-family="DejaVu Sans, sans-serif" font-size="34">Одно окно на все твои DeepSeek Harness:</text>
+  <text x="80" y="474" fill="#d4d4d8" font-family="DejaVu Sans, sans-serif" font-size="34">хаб, узлы и телефон в одной федерации</text>
+
+  <g font-family="DejaVu Sans, sans-serif" font-size="22" fill="#8b8b95">
+    <text x="80" y="566">proto 1 · SQLite · SSE · Kotlin</text>
+    <text x="1120" y="566" text-anchor="end">rukazax.github.io</text>
+  </g>
+</svg>

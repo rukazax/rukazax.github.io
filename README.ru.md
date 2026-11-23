@@ -16,6 +16,7 @@
 | Private SpeedDial | [/apps/private-speeddial.html](https://rukazax.github.io/apps/private-speeddial.html) | закладки и заметки для Chrome и Android |
 | XIO | [/apps/xio-vpn.html](https://rukazax.github.io/apps/xio-vpn.html) | VPN на своих серверах: Android, Ubuntu, Windows |
 | x1o | [/apps/x1o.html](https://rukazax.github.io/apps/x1o.html) | самохостная платформа ИИ-ассистентов |
+| dsh_hub | [/apps/dsh-hub.html](https://rukazax.github.io/apps/dsh-hub.html) | федерация DeepSeek Harness: хаб, узлы и телефон |
 | ECONA | [/apps/econa.html](https://rukazax.github.io/apps/econa.html) | исследовательский концепт кайт-солнечного катамарана |
 | Блог | [/#blog](https://rukazax.github.io/#blog) | разборы продуктов и локализации DeepSeek Harness |
 | RSS | [/feed.xml](https://rukazax.github.io/feed.xml) | лента статей |
@@ -47,7 +48,7 @@ flowchart LR
 index.html              лендинг услуг (RU)
 en.html                 лендинг услуг (EN)
 404.html                страница «не найдено» в стиле сайта
-apps/                   страницы продуктов: private-speeddial, xio-vpn, x1o, econa
+apps/                   страницы продуктов: private-speeddial, xio-vpn, x1o, dsh-hub, econa
 posts/                  статьи блога (готовый HTML, генерируется)
 src/                    исходники статей в Markdown
 assets/                 site.css, app.js, обложки, скриншоты, рендеры ECONA, mermaid
@@ -100,6 +101,9 @@ node tools/publish.mjs          # загрузить папку в GitHub Pages
   Android, Ubuntu, Windows: https://github.com/rukazax/xio_vpn
 - **x1o** — самохостная платформа личных ИИ-ассистентов: единый API, очередь диалогов, учёт расходов,
   пуши. Репозиторий приватный, публичного сайта нет.
+- **dsh_hub** — федерация DeepSeek Harness: один экземпляр становится хабом, остальные узлами,
+  телефон — пульт и исполнитель. Чужие сессии в одном окне, единые ключи моделей, общая память:
+  https://github.com/rukazax/dsh_hub
 - **ECONA** — исследовательский концепт океанского кайт-солнечно-электрического катамарана:
   https://github.com/rukazax/econa · https://rukazax.github.io/econa/
 

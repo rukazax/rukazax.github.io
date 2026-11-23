@@ -130,6 +130,7 @@ section { padding:74px 0 0; }
 .case .in { padding:22px 24px 26px; }
 .cases.compact { grid-template-columns:repeat(auto-fit, minmax(240px, 320px)); justify-content:start; }
 .cases.cases-4 { grid-template-columns:repeat(auto-fit, minmax(400px, 1fr)); }
+.cases.cases-5 { grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); }
 .case .tag { color:var(--accent-ink); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
 .case h3 { margin:8px 0 8px; font-size:21px; line-height:1.25; }
 .case p { margin:0; color:var(--muted); font-size:15px; }

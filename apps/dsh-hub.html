@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsh_hub — федерация DeepSeek Harness: хаб, узлы и телефон</title>
+<meta name="description" content="Один экземпляр DeepSeek Harness становится хабом, остальные — узлами: чужие сессии в одном окне, единые ключи моделей, общая память и управление с телефона. Протокол, SQLite, SSE, Android.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="dsh_hub — федерация DeepSeek Harness">
+<meta property="og:description" content="Один экземпляр DeepSeek Harness становится хабом, остальные — узлами: чужие сессии в одном окне, единые ключи моделей, общая память и управление с телефона.">
+<meta property="og:image" content="https://rukazax.github.io/assets/covers/dsh-hub.png">
+<meta property="og:url" content="https://rukazax.github.io/apps/dsh-hub.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23fbf237%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="tb-left">
+      <button class="burger" id="burgerBtn" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../index.html"><span class="dot"></span> RUKAZAX</a>
+    </div>
+    <nav class="navrow"><a href="../index.html#services">Услуги</a><a href="../index.html#cases">Продукты</a><a href="../index.html#process">Как работаю</a><a href="../index.html#stack">Технологии</a><a href="../index.html#blog">Блог</a><a href="../index.html#contact">Контакты</a></nav>
+    <div class="top-actions">
+      <a class="phone" href="tel:+79998024040">+7 (999) 802-40-40</a>
+      <button class="icon-btn" type="button" data-theme-toggle data-theme-title aria-label="Переключить тему"><span data-theme-label>☀</span></button>
+      <button class="btn btn-accent btn-sm" type="button" data-open-form>Оставить заявку</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="inner"><a href="../index.html#services">Услуги</a><a href="../index.html#cases">Продукты</a><a href="../index.html#process">Как работаю</a><a href="../index.html#stack">Технологии</a><a href="../index.html#blog">Блог</a><a href="../index.html#contact">Контакты</a></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="hero" id="top">
+    <div class="eyebrow">Self-hosted · Federation · Kotlin</div>
+    <h1 class="display">dsh_hub</h1>
+    <p class="lead">Один ноутбук, один настольный ПК, один телефон — и на каждом свой DeepSeek Harness со своими сессиями.
+    Проект сводит их в федерацию: один экземпляр становится хабом, остальные узлами, и всё это видно из одного окна.</p>
+    <div class="hero-actions">
+      <a class="btn btn-accent" href="../index.html#contact">Обсудить внедрение</a>
+      <a class="btn btn-ghost" href="https://github.com/rukazax/dsh_hub">Открытый код на GitHub</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="sec-head">
+      <div><h2>Что это</h2><p>Федерация экземпляров DeepSeek Harness, а не ещё одна панель управления.</p></div>
+    </div>
+    <div class="cards-4">
+      <div class="svc-card"><div><h3>Чужие сессии в одном окне</h3><p>Хаб видит сессии всех узлов, отправляет промпт в нужную и не подменяет устройство, на котором она живёт.</p></div></div>
+      <div class="svc-card"><div><h3>Ключи моделей — в одном месте</h3><p>Права и LLM-ключи живут на хабе. Узлам свои не нужны: пропал ключ — запрос падает, а не уходит «куда-нибудь».</p></div></div>
+      <div class="svc-card"><div><h3>Одна общая память</h3><p>Узлы присылают чанки работы, хаб собирает из них единый поисковый слой с пометкой workspace и узла.</p></div></div>
+      <div class="svc-card"><div><h3>Офлайн не ломает картину</h3><p>Узел живёт своей жизнью: своя работа, свои сессии. Выключили — он догонит, когда вернётся.</p></div></div>
+      <div class="svc-card"><div><h3>Телефон в двух ролях</h3><p>Пульт для управления федерацией и, при разрешении, исполнитель на своём устройстве.</p></div></div>
+      <div class="svc-card"><div><h3>Ядро не трогаем</h3><p>Всё живёт плагинами профиля и файлами состояния, поэтому обновление DSH не превращается в починку федерации.</p></div></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sec-head">
+      <div><h2>Как устроено</h2><p>Хаб, узлы, телефон и один протокол между ними.</p></div>
+    </div>
+    <div class="cards-4">
+      <div class="svc-card"><div><h3>Хаб</h3><p>HTTP и SSE на локальном порту, SQLite без зависимостей, снапшоты сессий, очередь команд и аудит.</p></div></div>
+      <div class="svc-card"><div><h3>Узел</h3><p>Плагин в профиле DSH: спаривание по коду, отправка индекса, приём команд и исполнение у себя.</p></div></div>
+      <div class="svc-card"><div><h3>Телефон</h3><p>Нативное приложение на Kotlin и Compose: узлы, сессии, переписка, промпты, подтверждения.</p></div></div>
+      <div class="svc-card"><div><h3>Протокол</h3><p><code>proto 1</code>, идемпотентные <code>commandId</code>, курсоры <code>Last-Event-ID</code> на обоих потоках событий.</p></div></div>
+    </div>
+  </section>
+
+  <section id="status">
+    <div class="sec-head">
+      <div><h2>Что уже работает</h2><p>Хаб v0: спаривание, обмен и хранение проверены тестами, а не обещаниями.</p></div>
+    </div>
+    <div class="cards-4">
+      <div class="svc-card"><div><h3>Спаривание узлов</h3><p>Узел приходит по коду, получает токен и начинает отправлять индекс. Чужой код отбивается.</p></div></div>
+      <div class="svc-card"><div><h3>Устойчивость данных</h3><p>Списки узлов и сессий переживают перезапуск хаба; повторный индекс не плодит дубли.</p></div></div>
+      <div class="svc-card"><div><h3>Закрытые списки</h3><p>Без токена хаба списки недоступны — проверка входит в тестовый набор.</p></div></div>
+      <div class="svc-card"><div><h3>Дальше по плану</h3><p>Память, исполнение промптов с подтверждениями, права видимости, статистика расходов.</p></div></div>
+    </div>
+  </section>
+
+  <section id="security">
+    <div class="sec-head">
+      <div><h2>Приватность по умолчанию</h2><p>Здесь она не лозунг, а следствие архитектуры.</p></div>
+    </div>
+    <div class="cards-4">
+      <div class="svc-card"><div><h3>Исполнение — только у хозяина</h3><p>Сессия живёт на своём устройстве. Хаб управляет, но не исполняет чужие ходы за спиной владельца.</p></div></div>
+      <div class="svc-card"><div><h3>Опасное — по подтверждению</h3><p>Инструменты уровня оболочки спрашивают разрешение, каждое решение пишется в аудит, «стоп» гасит команды.</p></div></div>
+      <div class="svc-card"><div><h3>Исходящие соединения</h3><p>Узел сам стучится на хаб по HTTPS с токеном: входящих портов на узлах не требуется.</p></div></div>
+      <div class="svc-card"><div><h3>Без телеметрии</h3><p>Никаких внешних сервисов: данные ходят между вашими устройствами.</p></div></div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="contact">
+      <h2>Статус проекта</h2>
+      <p>dsh_hub в разработке: хаб v0 готов, дальше — память, исполнение промптов, права видимости и Android-приложение.
+      Репозиторий открыт под MIT, план и протокол лежат рядом с кодом.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="https://github.com/rukazax/dsh_hub">Смотреть репозиторий</a>
+        <a class="btn btn-ghost" href="../index.html#contact">Обсудить внедрение</a>
+      </div>
+      <p style="color:var(--dim);font-size:14px;margin:18px 0 0;max-width:70ch">Лицензия: MIT для собственного кода; сторонние зависимости сохраняют свои лицензии.</p>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <span>© 2026 Константин</span>
+    <span><a href="mailto:rukazax@gmail.com">rukazax@gmail.com</a> · <a href="tel:+79998024040">+7 (999) 802-40-40</a></span>
+  </footer>
+</div>
+
+<div class="modal" id="formModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
+    <h2 id="formTitle">Обсудим проект</h2>
+    <p>Оставьте контакты — отвечу в рабочее время, предложу план и оценку. Первая консультация бесплатная.</p>
+    <form id="contactForm" novalidate>
+      <label class="field"><span>Имя</span>
+        <input name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required></label>
+      <label class="field"><span>Телефон</span>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required></label>
+      <label class="field"><span>Электронная почта</span>
+        <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <label class="field"><span>Задача</span>
+        <textarea name="message" rows="4" placeholder="Коротко о проекте и сроках" required></textarea></label>
+      <button class="btn btn-accent" type="submit" id="formSubmit" style="width:100%;justify-content:center">Отправить</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+      <p class="form-note">Письмо уходит на rukazax@gmail.com. Сервис доставки при первой отправке
+      попросит подтвердить адрес — это одноразовое действие.</p>
+    </form>
+  </div>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

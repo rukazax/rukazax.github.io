@@ -3,6 +3,19 @@
 All notable changes to the site are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/), versions use [SemVer](https://semver.org/).
 
+## [1.2.0] — 2026-11-23
+
+### Added
+- Страница проекта **dsh_hub** — федерация DeepSeek Harness: `apps/dsh-hub.html`,
+  обложка `assets/covers/dsh-hub.png` (и SVG-исходник рядом), карточка на обоих лендингах
+  (теперь пять проектов). Описание собрано по README репозитория: принципы, устройство
+  хаба/узла/телефона, что уже покрыто тестами.
+
+### Changed
+- `assets/site.css`: сетка `cases-5` — пять карточек держат ровные ряды (3+2), а не одну
+  растянутую на всю ширину.
+- `README.md` и `README.ru.md`: dsh_hub в карте разделов, таблице продуктов, дереве и списке продуктов.
+
 ## [1.1.0] — 2026-10-30
 
 ### Added
